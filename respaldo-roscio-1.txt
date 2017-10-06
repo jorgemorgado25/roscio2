@@ -1,0 +1,1821 @@
+# +===================================================================
+# |
+# | Generado el 11-03-2017 a las 10:03:17 PM 
+# | Servidor: localhost
+# | MySQL Version: 5.5.5-10.1.16-MariaDB
+# | PHP Version: 5.6.24
+# | Base de datos: 'roscio'
+# | Tablas: [0] => anos;  [1] => auditorias;  [2] => categoria_platos;  [3] => categoria_rubros;  [4] => entradas;  [5] => escolaridades;  [6] => estudiantes;  [7] => ingresos;  [8] => inscripciones;  [9] => menciones;  [10] => menus;  [11] => migrations;  [12] => password_resets;  [13] => personas;  [14] => persons;  [15] => plato_rubro;  [16] => platos;  [17] => registers;  [18] => representantes;  [19] => roles;  [20] => rubros;  [21] => secciones;  [22] => students;  [23] => tipo_ingresos;  [24] => user_role;  [25] => users
+# |
+# +-------------------------------------------------------------------
+  
+# | Vaciado de tabla 'anos'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'anos'
+# +------------------------------------->
+CREATE TABLE `anos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mencion_id` int(10) unsigned NOT NULL,
+  `ano` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'anos'
+# +------------------------------------->
+INSERT INTO `anos` VALUES ('1', '1', '1ro', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `anos` VALUES ('2', '1', '2do', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `anos` VALUES ('3', '1', '3ro', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `anos` VALUES ('4', '1', '4to', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `anos` VALUES ('5', '1', '5to', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'auditorias'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'auditorias'
+# +------------------------------------->
+CREATE TABLE `auditorias` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `description` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `action` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `resource` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'auditorias'
+# +------------------------------------->
+INSERT INTO `auditorias` VALUES ('1', '1', 'Inicio de Sesión', NULL, NULL, '2017-02-13 07:23:02', '2017-02-13 07:23:02');
+INSERT INTO `auditorias` VALUES ('2', '1', 'Inicio de Sesión', NULL, NULL, '2017-02-14 07:53:34', '2017-02-14 07:53:34');
+INSERT INTO `auditorias` VALUES ('3', '1', 'Inicio de Sesión', NULL, NULL, '2017-02-14 10:44:24', '2017-02-14 10:44:24');
+INSERT INTO `auditorias` VALUES ('4', '1', 'Inicio de Sesión', NULL, NULL, '2017-02-15 06:41:10', '2017-02-15 06:41:10');
+INSERT INTO `auditorias` VALUES ('5', '1', 'Inicio de Sesión', NULL, NULL, '2017-02-25 12:20:21', '2017-02-25 12:20:21');
+INSERT INTO `auditorias` VALUES ('6', '1', 'Inicio de Sesión', NULL, NULL, '2017-03-10 20:16:12', '2017-03-10 20:16:12');
+INSERT INTO `auditorias` VALUES ('7', '1', 'Inicio de Sesión', NULL, NULL, '2017-03-11 13:52:32', '2017-03-11 13:52:32');
+INSERT INTO `auditorias` VALUES ('8', '1', 'Inicio de Sesión', NULL, NULL, '2017-03-11 17:00:41', '2017-03-11 17:00:41');
+INSERT INTO `auditorias` VALUES ('9', '1', 'Sesión Finalizada', NULL, NULL, '2017-03-11 17:14:06', '2017-03-11 17:14:06');
+INSERT INTO `auditorias` VALUES ('10', '1', 'Inicio de Sesión', NULL, NULL, '2017-03-11 17:14:15', '2017-03-11 17:14:15');
+
+  
+# | Vaciado de tabla 'categoria_platos'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'categoria_platos'
+# +------------------------------------->
+CREATE TABLE `categoria_platos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'categoria_platos'
+# +------------------------------------->
+INSERT INTO `categoria_platos` VALUES ('1', 'Desayuno', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_platos` VALUES ('2', 'Sopa', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_platos` VALUES ('3', 'Plato Principal', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_platos` VALUES ('4', 'Ensalada', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_platos` VALUES ('5', 'Bebida', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_platos` VALUES ('6', 'Fruta', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'categoria_rubros'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'categoria_rubros'
+# +------------------------------------->
+CREATE TABLE `categoria_rubros` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'categoria_rubros'
+# +------------------------------------->
+INSERT INTO `categoria_rubros` VALUES ('1', 'Harinas', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('2', 'Pastas', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('3', 'Cereales y Legumbres', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('4', 'Carnes', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('5', 'Verduras y Hortalizas', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('6', 'Frutas', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `categoria_rubros` VALUES ('7', 'Otros', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'entradas'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'entradas'
+# +------------------------------------->
+CREATE TABLE `entradas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo_ingreso_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `mencion_id` int(11) NOT NULL,
+  `escolaridad_id` int(11) NOT NULL,
+  `ano_id` int(11) NOT NULL,
+  `seccion_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'entradas'
+# +------------------------------------->
+INSERT INTO `entradas` VALUES ('1', '1', '1', '1', '1', '1', '2', '2016-11-29 13:26:16', '2016-11-29 13:26:16');
+INSERT INTO `entradas` VALUES ('2', '1', '8', '8', '1', '1', '2', '2016-11-29 13:40:19', '2016-11-29 13:40:19');
+INSERT INTO `entradas` VALUES ('3', '1', '8', '8', '1', '1', '2', '2016-11-29 13:40:24', '2016-11-29 13:40:24');
+INSERT INTO `entradas` VALUES ('4', '1', '8', '8', '1', '1', '2', '2016-11-29 13:40:37', '2016-11-29 13:40:37');
+INSERT INTO `entradas` VALUES ('5', '2', '1', '1', '1', '1', '2', '2016-11-29 14:54:05', '2016-11-29 14:54:05');
+INSERT INTO `entradas` VALUES ('6', '2', '1', '1', '1', '1', '2', '2016-11-29 15:02:28', '2016-11-29 15:02:28');
+INSERT INTO `entradas` VALUES ('7', '2', '1', '1', '1', '1', '2', '2016-11-29 15:02:31', '2016-11-29 15:02:31');
+INSERT INTO `entradas` VALUES ('8', '2', '4', '4', '1', '1', '2', '2016-11-29 15:11:47', '2016-11-29 15:11:47');
+INSERT INTO `entradas` VALUES ('9', '2', '5', '5', '1', '1', '2', '2016-11-29 15:11:58', '2016-11-29 15:11:58');
+INSERT INTO `entradas` VALUES ('10', '1', '68', '68', '1', '7', '61', '2016-12-05 11:08:52', '2016-12-05 11:08:52');
+INSERT INTO `entradas` VALUES ('11', '1', '34', '34', '1', '5', '41', '2016-12-05 11:09:41', '2016-12-05 11:09:41');
+INSERT INTO `entradas` VALUES ('12', '2', '4', '4', '1', '1', '2', '2016-12-05 14:55:06', '2016-12-05 14:55:06');
+INSERT INTO `entradas` VALUES ('13', '2', '68', '68', '1', '7', '61', '2016-12-05 14:55:22', '2016-12-05 14:55:22');
+INSERT INTO `entradas` VALUES ('14', '2', '71', '71', '1', '7', '61', '2016-12-05 14:55:54', '2016-12-05 14:55:54');
+INSERT INTO `entradas` VALUES ('16', '1', '9', '9', '1', '1', '2', '2016-12-07 12:35:10', '2016-12-07 12:35:10');
+INSERT INTO `entradas` VALUES ('17', '1', '34', '34', '1', '5', '41', '2016-12-07 12:41:33', '2016-12-07 12:41:33');
+INSERT INTO `entradas` VALUES ('18', '1', '1', '1', '1', '1', '2', '2016-12-07 13:38:29', '2016-12-07 13:38:29');
+INSERT INTO `entradas` VALUES ('19', '2', '3', '3', '2', '1', '1', '2017-01-09 14:29:02', '2017-01-09 14:29:02');
+INSERT INTO `entradas` VALUES ('20', '2', '4', '4', '2', '1', '1', '2017-01-09 14:30:43', '2017-01-09 14:30:43');
+INSERT INTO `entradas` VALUES ('21', '2', '8', '8', '2', '1', '1', '2017-01-09 14:30:52', '2017-01-09 14:30:52');
+INSERT INTO `entradas` VALUES ('22', '2', '2', '134', '2', '1', '1', '2017-01-12 14:10:34', '2017-01-12 14:10:34');
+INSERT INTO `entradas` VALUES ('23', '2', '3', '135', '2', '1', '1', '2017-01-12 14:10:41', '2017-01-12 14:10:41');
+INSERT INTO `entradas` VALUES ('24', '2', '4', '136', '2', '1', '1', '2017-01-12 14:10:47', '2017-01-12 14:10:47');
+INSERT INTO `entradas` VALUES ('25', '2', '5', '137', '2', '1', '1', '2017-01-12 14:10:52', '2017-01-12 14:10:52');
+INSERT INTO `entradas` VALUES ('26', '2', '6', '138', '2', '1', '1', '2017-01-12 14:11:00', '2017-01-12 14:11:00');
+INSERT INTO `entradas` VALUES ('27', '2', '7', '139', '2', '1', '1', '2017-01-12 14:11:06', '2017-01-12 14:11:06');
+INSERT INTO `entradas` VALUES ('28', '2', '8', '140', '2', '1', '1', '2017-01-12 14:11:13', '2017-01-12 14:11:13');
+INSERT INTO `entradas` VALUES ('29', '2', '9', '141', '2', '1', '1', '2017-01-12 14:11:18', '2017-01-12 14:11:18');
+INSERT INTO `entradas` VALUES ('30', '2', '10', '142', '2', '1', '1', '2017-01-12 14:11:25', '2017-01-12 14:11:25');
+INSERT INTO `entradas` VALUES ('31', '2', '11', '143', '2', '1', '1', '2017-01-12 14:11:31', '2017-01-12 14:11:31');
+INSERT INTO `entradas` VALUES ('32', '2', '1', '1', '1', '1', '1', '2017-01-25 11:10:11', '2017-01-25 11:10:11');
+INSERT INTO `entradas` VALUES ('33', '2', '2', '2', '1', '1', '1', '2017-01-25 11:35:52', '2017-01-25 11:35:52');
+INSERT INTO `entradas` VALUES ('34', '2', '3', '3', '1', '1', '1', '2017-01-25 11:36:01', '2017-01-25 11:36:01');
+INSERT INTO `entradas` VALUES ('35', '2', '4', '4', '1', '1', '1', '2017-01-25 11:36:06', '2017-01-25 11:36:06');
+INSERT INTO `entradas` VALUES ('36', '2', '5', '5', '1', '1', '1', '2017-01-25 11:36:12', '2017-01-25 11:36:12');
+INSERT INTO `entradas` VALUES ('37', '2', '6', '6', '1', '1', '1', '2017-01-25 11:36:18', '2017-01-25 11:36:18');
+INSERT INTO `entradas` VALUES ('38', '2', '7', '7', '1', '1', '1', '2017-01-25 11:36:24', '2017-01-25 11:36:24');
+INSERT INTO `entradas` VALUES ('39', '2', '8', '8', '1', '1', '1', '2017-01-25 11:36:29', '2017-01-25 11:36:29');
+INSERT INTO `entradas` VALUES ('40', '2', '9', '9', '1', '1', '1', '2017-01-25 11:36:36', '2017-01-25 11:36:36');
+INSERT INTO `entradas` VALUES ('41', '2', '10', '10', '1', '1', '1', '2017-01-25 11:36:43', '2017-01-25 11:36:43');
+INSERT INTO `entradas` VALUES ('42', '2', '1', '1171', '1', '1', '1', '2017-02-13 10:45:24', '2017-02-13 10:45:24');
+INSERT INTO `entradas` VALUES ('43', '1', '1', '1171', '1', '1', '1', '2017-02-14 07:54:38', '2017-02-14 07:54:38');
+INSERT INTO `entradas` VALUES ('44', '1', '3', '1173', '1', '1', '1', '2017-02-14 07:55:46', '2017-02-14 07:55:46');
+
+  
+# | Vaciado de tabla 'escolaridades'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'escolaridades'
+# +------------------------------------->
+CREATE TABLE `escolaridades` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `escolaridad` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'escolaridades'
+# +------------------------------------->
+INSERT INTO `escolaridades` VALUES ('1', '2016-2017', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'estudiantes'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'estudiantes'
+# +------------------------------------->
+CREATE TABLE `estudiantes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `madre_id` int(11) NOT NULL,
+  `padre_id` int(11) NOT NULL,
+  `nac` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `representante` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `cedula` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `genero` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_nac` date NOT NULL,
+  `estado_nac` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `lugar_nac` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `talla` double NOT NULL,
+  `peso` double NOT NULL,
+  `grupo_sanguineo` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
+  `enf_aler` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `vive_con_madre` tinyint(1) NOT NULL,
+  `vive_con_padre` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `estudiantes_cedula_unique` (`cedula`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'estudiantes'
+# +------------------------------------->
+INSERT INTO `estudiantes` VALUES ('1', '1', '2', 'v', '1', '15392404', 'JORGE LUIS', 'MORGADO ABREU', 'm', '1983-02-11', 'GUARICO', 'SAN JUAN DE LOS MORROS', '1.65', '70.5', 'O+', '', 'LA MORERA', '0', '0', '2017-01-19 14:33:03', '2017-01-19 14:33:03');
+
+  
+# | Vaciado de tabla 'ingresos'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'ingresos'
+# +------------------------------------->
+CREATE TABLE `ingresos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo_ingreso_id` int(11) NOT NULL,
+  `estudiante_id` int(11) NOT NULL,
+  `mencion_id` int(11) NOT NULL,
+  `escolaridad_id` int(11) NOT NULL,
+  `ano_id` int(11) NOT NULL,
+  `seccion_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'ingresos'
+# +------------------------------------->
+INSERT INTO `ingresos` VALUES ('1', '0', '1', '1', '1', '1', '1', '2016-11-25 13:15:07', '2016-11-25 13:15:07');
+INSERT INTO `ingresos` VALUES ('2', '0', '1', '1', '1', '1', '1', '2016-11-25 13:15:11', '2016-11-25 13:15:11');
+INSERT INTO `ingresos` VALUES ('3', '0', '1', '1', '1', '1', '1', '2016-11-28 15:08:45', '2016-11-28 15:08:45');
+
+  
+# | Vaciado de tabla 'inscripciones'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'inscripciones'
+# +------------------------------------->
+CREATE TABLE `inscripciones` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `escolaridad_id` int(11) NOT NULL,
+  `estudiante_id` int(11) NOT NULL,
+  `representante_id` int(11) NOT NULL,
+  `mencion_id` int(11) NOT NULL,
+  `ano_id` int(11) NOT NULL,
+  `seccion_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'inscripciones'
+# +------------------------------------->
+INSERT INTO `inscripciones` VALUES ('1', '1', '1', '1', '1', '1', '1', '2016-11-25 13:14:55', '2016-11-25 13:14:55');
+
+  
+# | Vaciado de tabla 'menciones'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'menciones'
+# +------------------------------------->
+CREATE TABLE `menciones` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mencion` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'menciones'
+# +------------------------------------->
+INSERT INTO `menciones` VALUES ('1', 'Media', 'Educación Media', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'menus'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'menus'
+# +------------------------------------->
+CREATE TABLE `menus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `plato_id` int(11) NOT NULL,
+  `tipo_ingreso_id` int(11) NOT NULL,
+  `cantidad` smallint(5) unsigned NOT NULL,
+  `fecha` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'menus'
+# +------------------------------------->
+INSERT INTO `menus` VALUES ('1', '1', '1', '500', '2016-11-28', '2016-11-28 11:19:13', '2016-11-28 11:19:13');
+INSERT INTO `menus` VALUES ('2', '1', '1', '500', '2016-11-29', '2016-11-29 11:59:07', '2016-11-29 11:59:07');
+INSERT INTO `menus` VALUES ('3', '2', '2', '800', '2016-11-29', '2016-11-29 14:30:29', '2016-11-29 14:30:29');
+INSERT INTO `menus` VALUES ('4', '1', '1', '400', '2016-12-01', '2016-12-01 10:40:37', '2016-12-01 10:40:37');
+INSERT INTO `menus` VALUES ('10', '2', '2', '500', '2016-12-05', '2016-12-05 15:57:21', '2016-12-05 15:57:21');
+INSERT INTO `menus` VALUES ('11', '2', '2', '2', '2017-01-09', '2017-01-09 14:25:00', '2017-01-09 14:25:00');
+INSERT INTO `menus` VALUES ('12', '2', '2', '500', '2017-01-12', '2017-01-12 14:07:32', '2017-01-12 14:07:32');
+INSERT INTO `menus` VALUES ('13', '3', '2', '500', '2017-01-12', '2017-01-12 14:07:32', '2017-01-12 14:07:32');
+INSERT INTO `menus` VALUES ('14', '1', '1', '200', '2017-01-12', '2017-01-12 14:07:44', '2017-01-12 14:07:44');
+INSERT INTO `menus` VALUES ('15', '3', '1', '200', '2017-01-12', '2017-01-12 14:07:44', '2017-01-12 14:07:44');
+INSERT INTO `menus` VALUES ('16', '2', '2', '500', '2017-01-25', '2017-01-25 10:49:53', '2017-01-25 10:49:53');
+INSERT INTO `menus` VALUES ('17', '2', '2', '500', '2017-02-13', '2017-02-13 10:43:04', '2017-02-13 10:43:04');
+INSERT INTO `menus` VALUES ('18', '1', '1', '500', '2017-02-14', '2017-02-14 07:54:04', '2017-02-14 07:54:04');
+
+  
+# | Vaciado de tabla 'migrations'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'migrations'
+# +------------------------------------->
+CREATE TABLE `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'migrations'
+# +------------------------------------->
+INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table', '1');
+INSERT INTO `migrations` VALUES ('2014_10_12_100000_create_password_resets_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_17_142704_create_roles_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_17_145510_create_user_role_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_23_022550_create_menciones_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_23_022649_create_anos_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_23_022713_create_secciones_table', '1');
+INSERT INTO `migrations` VALUES ('2016_08_31_234433_create_estudiantes_table', '1');
+INSERT INTO `migrations` VALUES ('2016_09_01_000558_create_personas_table', '1');
+INSERT INTO `migrations` VALUES ('2016_09_01_001634_create_representantes_table', '1');
+INSERT INTO `migrations` VALUES ('2016_09_19_133612_create_escolaridades_table', '1');
+INSERT INTO `migrations` VALUES ('2016_09_21_134556_create_inscripcions_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_17_141524_create_ingresos_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_20_195139_create_rubros_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_20_200605_create_categoria_platos_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_20_200700_create_categoria_rubros_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_20_200842_create_platos_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_20_201642_create_plato_rubros_table', '1');
+INSERT INTO `migrations` VALUES ('2016_10_31_133759_create_menus_table', '1');
+INSERT INTO `migrations` VALUES ('2016_11_01_011653_create_tipo_ingresos_table', '1');
+INSERT INTO `migrations` VALUES ('2016_11_15_134238_create_students_table', '1');
+INSERT INTO `migrations` VALUES ('2016_11_15_134401_create_registers_table', '1');
+INSERT INTO `migrations` VALUES ('2016_11_17_121913_create_persons_table', '1');
+INSERT INTO `migrations` VALUES ('2016_11_29_115216_create_entradas_table', '2');
+INSERT INTO `migrations` VALUES ('2017_02_01_104836_create_auditorias_table', '3');
+
+  
+# | Vaciado de tabla 'password_resets'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'password_resets'
+# +------------------------------------->
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  KEY `password_resets_email_index` (`email`),
+  KEY `password_resets_token_index` (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'password_resets'
+# +------------------------------------->
+
+  
+# | Vaciado de tabla 'personas'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'personas'
+# +------------------------------------->
+CREATE TABLE `personas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nac` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `cedula` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `genero` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_nac` date NOT NULL,
+  `telefono` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profesion` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `grado_instruccion` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `difunto` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personas_cedula_unique` (`cedula`),
+  UNIQUE KEY `personas_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'personas'
+# +------------------------------------->
+INSERT INTO `personas` VALUES ('1', 'v', '5598427', 'MARGARITA JOSEFINA', 'ABREU CUMARIN', 'f', '1960-11-27', '04147563486', NULL, 'DOCENTE', 'LICENCIADA', 'LA MORERA', '0', '2017-01-19 14:33:03', '2017-01-19 14:33:03');
+INSERT INTO `personas` VALUES ('2', 'v', '2521505', 'JOSE LUIS', 'MORGADO REINA', 'm', '1954-08-14', '04143434486', NULL, 'COMERCIANTE', 'SECUNDARIA', 'FLORES', '0', '2017-01-19 14:33:03', '2017-01-19 14:33:03');
+INSERT INTO `personas` VALUES ('3', 'v', '9865348', 'LAURA MARIA', 'PEREZ COLMENARES', 'f', '1970-05-13', '04147563486', 'laura3@yahoo.com', 'DOCENTE', 'LICENCIADA', 'CENTRO', '0', '2017-01-19 14:33:03', '2017-01-19 14:33:03');
+
+  
+# | Vaciado de tabla 'persons'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'persons'
+# +------------------------------------->
+CREATE TABLE `persons` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ci` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `full_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=322 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'persons'
+# +------------------------------------->
+INSERT INTO `persons` VALUES ('1', '15227717', 'INGRID MENDEZ', NULL, 'URBANIZACION LOS TELEGRAFISTAS, CALLE LIC. SANOJA', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `persons` VALUES ('2', '11121173', 'LIRIAN C.DELGADO P.', NULL, 'CALLEJON INFANTE', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `persons` VALUES ('3', '14871933', 'CAROLNA PUERTA', NULL, 'CALLE SANTA ROSA Nº 37', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('4', '11124941', 'CARMEN GARCIA ', NULL, 'BARRIO EL DELIRIO EL MAMON', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('5', '9887726', 'DORYS PRADA', NULL, NULL, '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('6', '17272124', 'CAROLIN GIMENEZ B.', NULL, 'CALLE SANTA ISABEL N° 15-B', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('7', '14394142', 'GIOVANA MARIA', NULL, NULL, '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('8', '10667502', 'ALEJANDRA MONTEVIDEO', NULL, 'CALLE LÒPEZ CONTRERAS  Nº 7-C', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('9', '14066199', 'JOHANNA RODRIGUEZ', NULL, NULL, '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('10', '11123924', 'ROSIBEL VELASQUEZ', NULL, 'AV. FERMÍN TORO, CALLEJON XIOMARA N° 3. CASCO CENTRAL', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('11', '9886234', 'ODALIS CELIS', NULL, NULL, '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('12', '11119232', 'MAGALY MEDINA H.', NULL, 'S/SAN JOSE C/RIVAS D #15', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('13', '14394526', 'JACQUELINE COA', NULL, 'CALLE ROSCIO N°68', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `persons` VALUES ('14', '9889961', 'CARLOS GARCIA', NULL, 'URB. SANTA ISABEL MANZANA 1 # 11', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('15', '13875509', 'YORLEYDY RIVERO', NULL, 'C/ NEGRO PRIMERO N° 35', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('16', '14193014', 'MARIA MALDONADO', NULL, 'VALLE VERDE # 07', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('17', '16143259', 'ELVIRA BLANCO', NULL, 'CALLE PAEZ #95', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('18', '14666262', 'JACKELINE BUSTAMANTE', NULL, 'AV FERMIN TORO BQ N°3', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('19', '9914626', 'NANTALIZ SANCHEZ', NULL, 'C/ ELEAZAR LOPEZ C # 30', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('20', '10668517', 'LUISA GIUNTA', NULL, 'C/ SAN JUAN N° 38', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('21', '17063903', 'ANGGIE C. ACOSTA DE T.', NULL, 'AV. LOPEZ C. CEMENTERIO', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('22', '10672389', 'CAROLINA TORRES E.', NULL, 'C/ ELEAZAR LOPEZ C # ', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('23', '10672312', 'ZAIDA BLANCO', NULL, 'AV. FERMÌN TORO', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('24', '14870766', 'LUIS G. CEBALLOS J.', NULL, 'AV. SANTA ISABEL Nº 03', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `persons` VALUES ('25', '9883672', 'MILAGRO PERDOMO', NULL, 'SECTOR EL CEMENTERIO N° 62', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('26', '18804465', 'OCHOA G. MAYRA A.', NULL, NULL, '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('27', '20587305', 'LEIDYS CARDENAS', NULL, 'C/ NICARAGUA PUEBLO NUEVO', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('28', '8780961', 'MARIA TORRES', NULL, 'AV. FERMIN TORO Nº 02-2', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('29', '18643828', 'PEREZ QUINTANA YAJAIRA M.', NULL, 'CALLE PPAL. DE LA MORERA APTO. 33', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('30', '17271858', 'MARIELA COELLO', NULL, 'URB. PARIAPAN V/6 N°8', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('31', '20586177', 'YINEZCA CARDERA', NULL, 'AV. FERMIN TORO V/2', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `persons` VALUES ('32', '11124201', 'SANDOVAL BOLIVAR NADIA MARGARITA ', NULL, 'URB ALTOS DE FENIX TERRAZA #1 Nº 16', '2017-03-11 14:20:22', '2017-03-11 14:20:22');
+INSERT INTO `persons` VALUES ('33', '17689078', 'MALDONADO, GABRIELA LISETT', NULL, 'LAS PALMAS CALLE PALMARITO Nº 24', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('34', '11116375', 'YNFANTE, YSABEL CECILIA', NULL, 'CALLE SALIA Nº 64', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('35', '16803933', 'PEÑA PADRINA, MARYURY CARIDAD', NULL, 'LAS PALMAS ENTRADA MARÍA LUGO Nº 142-B', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('36', '15393918', 'HERNÁNDEZ MACHADO YELITZA CAROLINA', NULL, 'URB. VISTA HERMOSA LAS CASITAS SEGUNDA ETAPA', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('37', '14107567', 'UZCATEGUI, MARÍA LUISA', NULL, 'B/14 DE MARZO CALLE COLÒN CASA Nº 23 -A', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('38', '18044791', 'PERSAD CEDÑO, RABINDRA', NULL, 'CALLE URDANETA Nº 18', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('39', '10665447', 'RODRÍGUEZ VALOR JOSE MIGUEL ', NULL, 'AV/ FERMIN TORO PASAJE 1 CASA Nº 29', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('40', '10666793', 'TOVAR SOTOMAYOR KETEY KRISTIAN', NULL, 'CALLE NEGRO PRIMERO Nº 20 CASCO CENTRAL', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('41', '13448367', 'MOLGADO RIVERO, MILDRED DEL VALLE', NULL, 'B/AEROPUERTO C/ARBOLEDA CASA Nº 15', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('42', '10750531', 'CEDEÑO DE CARAPAICA ARELIS J', NULL, 'BRISAS DEL VALLE C/MARIANO MIJARES # 51', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `persons` VALUES ('43', '9887977', 'DI GABRIELE SILVA SARINA', NULL, 'CALLE ROSCIO 123-1', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('44', '13732215', 'CORDOVA PAREDES TIMNA MAGDIEL', NULL, 'LAS MAJAGUAS C/PIEDRAS BLANCA 25', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('45', '4390080', 'HIDALGO CARPIO LUIS FELIPE', NULL, 'CALLE INFANTE NRO. 69', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('46', '13151970', 'VILLARROEL GARCÍA, FACILIA ELUBERYS', NULL, 'EL JOBO 2  C/GUARIQUITO CASA Nº 31 ', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('47', '16364331', 'RAMIREZ PAEZ NAIROBIS JOSEFINA', NULL, 'CALLE SANTA ROSA # 78-A', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('48', '18617893', 'ACOSTA MEJIA, MARIELA KARINA', NULL, 'SECTOR AEROPUERTO CALLE LIBERTAD Nº 28', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('49', '10669540', 'MATUTE, MIGDALIA JOSEFINA', NULL, 'BARRIO BICENTENARIO SECTOR GIUNTA Nº 47', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('50', '16075498', 'NUÑEZ DUHDAMEL,MARIA ALEJANDRA', NULL, 'AVENIDA BOLIVAR, CASA N°8 LA MILENARIA', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('51', '12841251', 'MOLINA ACOSTA DERIS DEL CARMEN ', NULL, 'BARRIO AEROPUERTO CALLE LIBERTAD Nº 08', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('52', '17352812', 'SANCHEZ AVILA ROXISMARY BERLITZA', NULL, 'B/SAN JOSÉ C/ARAGUA # 7', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('53', '10666288', 'Mijares Hernandez, Omaira Josefina', NULL, 'Calle Santa Rosa N° 40', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('54', '10666704', 'ALVIA CABALLERO, JUANA MARÍA', NULL, 'AV. LOS LLANOS 162-A', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('55', '9887369', 'RUIZ MIRIAM ZULAY', NULL, 'URB. LAS PALMAS SECTOR EL PORVENIR 7', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `persons` VALUES ('56', '10674487', 'AVILAN JARAMILLO YARITZA JOSEFINA ', NULL, 'CALLE EL CARMEN Nº 4 ', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('57', '11117060', 'MARTINEZ VASQUEZ JOSE ANGEL', NULL, 'CALLE LAZO MARTI N 15', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('58', '17165018', 'DIAZ BENAVIDES, YUSEIDA GERONIMA', NULL, '11-03-2017', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('59', '15453482', 'HERNANDEZ BEROES, MIGLERY MILAGROS', NULL, NULL, '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('60', '15081362', 'GARCÍA ARMAS DARERYS JOSEFINA', NULL, 'SECTOR EL JOBO C/BRISAS DE LA VICTORIA', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('61', '8789424', 'SANTIAGO DELIA MARÍA', NULL, 'BARRIO LAS MERCEDES CJON SANTA ELENA', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('62', '14642548', 'SÁNCHEZ YRISMAR, TRISNERIS DEL VALLE', NULL, 'CALLE MENECO CJÓN EL MAMÓN S/N', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('63', '14642258', 'ALVAREZ RAMIREZ MARYURY CAROLINA', NULL, 'AV. UNIVERSIDAD SECTOR CHE GUEVARA', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('64', '18803626', 'JIMENEZ BERRA, RUTH REBECA', NULL, NULL, '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `persons` VALUES ('65', '14146803', 'ESPEDITA PAEZ', NULL, NULL, '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('66', '10668997', 'MARIA MEZONES', NULL, 'URB. PARIAPAN B/11 APTO 02-03', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('67', '11750661', 'MILVILDA BLANCO', NULL, 'AV. JOSE FELIX RIBAS', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('68', '18617114', 'JENNIFER PADRON', NULL, 'PARIAPAN', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('69', '9891174', 'DILSIA MARTINEZ', NULL, 'CALLE SANTA ROSA Nº18-A', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('70', '9887086', 'JULIO VELASQUEZ', NULL, 'AV.JOSE F. RIBAS N° 35', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('71', '8769128', 'SANTA TORREALBA', NULL, 'VALLE VERDE SECTOR VILLA PARAISO ', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('72', '13875252', 'YULIMAR MILANO', NULL, 'AV. FERMIN TORO N° 50', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('73', '10272055', 'CARLOS CONTRERAS', NULL, 'CALLE MARIÑO N° 22. SECTOR CENTRO', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('74', '14146742', 'DAYCELYS PADRON', NULL, 'SECTOR 14 DE MARZO', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `persons` VALUES ('75', '13150323', 'AYARIT MARTINEZ', NULL, NULL, '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('76', '12840266', 'YENNIFER CARVAJAL', NULL, 'C/ EL CARMEN 16-A ', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('77', '16364497', 'JHOANNA PULIDO', NULL, 'AV. CEDEÑO N° 46', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('78', '8998234', 'MARIA MORGADO', NULL, NULL, '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('79', '8779306', 'MIGDALIA ALVAREZ', NULL, 'C/ LA ESTRELLA CASCO CENTRAL', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('80', '15081590', 'INDIRA NOGUERA', NULL, NULL, '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('81', '10670544', 'MILAGROS REYNA', NULL, 'C/ EL PIÑANGO  EL POTRERO', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('82', '15096842', 'YANELYS RODRIGUEZ', NULL, 'C/ LAZO MARTI N° 24', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('83', '9884662', 'MARIA SEIJAS', NULL, 'AV. FERMIN TORO CJON PARIAPAN', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('84', '7516697', 'PINEDA MARIA CRISANTA', NULL, 'CASERIO LOS FLORES', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('85', '15393572', 'DISNEY MERCADO', NULL, NULL, '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('86', '10975376', 'FRANCIS JARAMILLO', NULL, 'CALLE ROSCIO ', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `persons` VALUES ('87', '18616359', 'MARGEL ROJAS', NULL, 'VALLE VERDE CALLE PRINCIPAL C/N', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('88', '10671408', 'MARIA BARRADES', NULL, 'PROL. JOSE F. RIBAS FENTE EL NIBE', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('89', '12842527', 'RINA HERRADES', NULL, 'AV. FERMIN TORO (FRENTE SILENCIADORES PHILLIM N° 73)', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('90', '17063653', 'ANGIE MEDINA', NULL, 'CALLE PRINCIPAL LA MORERA,SECTOR SANTA EDUVIGEN', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('91', '10669330', 'JUSTA ZERPA', NULL, 'C/ LAZO MARTI N° 53', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('92', '25001642', 'AMADA LEAL ', NULL, NULL, '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('93', '11116233', 'MARIBEL VELASQUEZ', NULL, 'BRISAS DEL VALLE', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('94', '11116813', 'ANAHY C. ACOSTA', NULL, 'C/ EL DELIRIO N° 6-C', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('95', '19725569', 'MARIA RONDON', NULL, 'C/ EL DELIRIO N°2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('96', '15819088', 'CORDERO ESPINOZA SURAMI', NULL, 'URB. HUGO CHÀVEZ. VILLA  OLÌMPICA', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('97', '13150501', 'YOLIMAR OVALLES', NULL, 'C/ EL DELIRIO Nº 13-01', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('98', '12393853', 'JUAN VARGAS', NULL, 'BARRIO BICENTENARIO,  PASAJE 1', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('99', '18616721', 'AURA CONTRERAS', NULL, NULL, '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `persons` VALUES ('100', '9888169', 'CHACÓN PÉREZ, WILLIAM ANTONIO', NULL, 'B/LOS PLACERES CALLE ECUADOR Nº 25', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('101', '14643014', 'TABLANTE TERAN, WENDY JACKELIN', NULL, 'AV. FERMÌN TORO CALLEJÓN EL MAMÓN 71-1', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('102', '10674849', 'FLORES RAMOS EDUARDA ', NULL, 'SECTOR 12 DE OCTUBRE  # 27', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('103', '17271073', 'GUARENAS AGUIAR, INMERVIS JUANDY', NULL, 'URB. PARIAPAN VEREDA 11 CASA Nº 1', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('104', '16074908', 'CORREA ALVAREZ YUSMARY MARITZA', NULL, 'NUEVA CONSTITUYENTE Nº13 POR LOCATEL', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('105', '12840739', 'REQUENA SEIJAS YANIDES COROMOTO', NULL, 'LAS PALMAS CALLE LA AURORA # 25', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('106', '10673608', 'INIJOSA CALDERA MARIA ISABEL ', NULL, 'SECTOR ERNESTO CHE GUEVARA CALLE EL CARMEN Nº7', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('107', '16074580', 'TORTOSA ARREAZA VIRGINIA DEL CARMEN', NULL, 'LAS PALMAS CALLE CECILIO ACOSTA C/N', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('108', '16074364', 'GRATEROL HIDALGO YANIRE MARGARITA', NULL, 'CALLE VISTA HERMOSA LA MORERA ', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('109', '13152945', 'HILARDO DE BELISARIO AMANDA C', NULL, '1º DE MAYO CALLE LA AMISTAD Nº 34', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('110', '16500700', 'PINTO ARCINIEGAS YENDRIZ ERNESTO', NULL, 'URB EL PORTAL CALLE  CASA Nº 9', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('111', '15081105', 'MANZANILLA OVALLES CARMEN YELITZA', NULL, 'C/ EL DELIRIO CASANº 24-1', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `persons` VALUES ('112', '14642315', 'MANZANO LILIANA DEL CARMEN', NULL, 'CARRETERA NACIONAL PARQUE EL JOBO', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('113', '12841479', 'CRESPO MORENO, ANTONIO SEBERANO', NULL, 'C/PALMARITO Nº II LAS PALMAS', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('114', '17689486', 'JIMENEZ BANDRES,MARÍA ALEJANDRA', NULL, 'AV. SANTA ISABEL 15 =B', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('115', '15400248', 'DÍAZ CASTILLO, YOHAMIN ANTONIO', NULL, 'CALLE LA ESTRELLA S/N', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('116', '17271156', 'SALDEÑO DE MONTOYA ASTRID M', NULL, 'BARRIO PUERTA NEGRA C/AMBULATORIO', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('117', '16803227', 'GUARIQUE MARTINEZ LEONEIDA YURUBI', NULL, NULL, '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('118', '17352037', 'VELÁSQUEZ NAVARRO EURIS DAYETZA', NULL, 'URB. JESUS DE NAZARETH VEREDA 4 Nº30', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('119', '12841416', 'MARTÍNEZ PEREIRA, ALNELLYS  DEL VALLE', NULL, 'CALLE MENECO Nº 25', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('120', '8780730', 'PÉREZ RODRÍGUEZ REYNA TIBISAY', NULL, 'PASAJE 23 DE ENERO NRO. 6', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('121', '15392526', 'OROPEZA LUZ', NULL, 'S/ LA ESPERANZA C/ PSJE BOLIVAR C/ 10', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('122', '17352437', 'GARCÍA MACHUCA GLENIS DANEYDIS', NULL, 'CALLEJON URDANETA CASA Nº06', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('123', '15698227', 'FERRER ANNYS ARGELIA', NULL, 'CAGUA EDO ARAGUA ', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `persons` VALUES ('124', '8997692', 'ARRAIZ DE OLIVO, JUANA MARÌA', NULL, NULL, '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('125', '13681054', 'SUÁREZ ARREAZA, PEDRO JOSÉ', NULL, 'AV. CEDEÑO CASA Nº 72', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('126', '15084156', 'CASTILLO TOVAR ROCIO IRIANI', NULL, 'COLINAS DE PARIAPA. CALLE PRINCIPAL. S/N', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('127', '13789012', 'SALAZAR FERMÍN LUIS RAMÓN ', NULL, 'VISTA HERMOSA CASCO CENTRAL CASA # 7', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('128', '16076379', 'GARCÌA BRICEÑO, ERIKA MILAGROS', NULL, 'B/BICENTENARIO SECTOR  LIBERTAD 2da VEREDA S/N', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('129', '17352112', 'GONZALEZ MARTINEZ, MARIANA JOSEFINA', NULL, NULL, '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('130', '15082047', 'NAVAS SOLORZANO YOELYS DASELYS', NULL, 'VISTA HERMOSA RANCHO S/N', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `persons` VALUES ('131', '13150369', 'FEMAYOR MOSQUEDA NEIDA ROSARIO', NULL, 'AV. PRINCIPAL LA MORERA PLANTA B Nº 1', '2017-03-11 17:10:16', '2017-03-11 17:10:16');
+INSERT INTO `persons` VALUES ('132', '16075315', 'HERNANDEZ GARCIA JOHANNERIS PETRA', NULL, NULL, '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('133', '11027316', 'ARISMEDI DE MUJICA NORALYS DELFINA', NULL, 'VISTA HERMOSA SECTOR LA LAGUNA', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('134', '15711668', 'TOVAR SEIJAS EGLYS DESIREE', NULL, 'URB. PORTAL DE LOS MORROS CASA Nº 11', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('135', '10079990', 'FLORES PETRA LEANTEA', NULL, 'AV. FERMIN TORO CALLEJON XIOMARA Nº 1', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('136', '15393928', 'SANCHEZ MIRELES YULIMAR DE LOS ANGELES', NULL, 'URB. LOS LAURELES CALLEJON ESPAÑA S/N', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('137', '14642902', 'ZACARIAS CALVAJAL LORENA CRISTINA', NULL, 'CALLE VARGAS LAS PALMAS Nº 27 - A', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('138', '17252413', 'BARRIOS DE ARREAZA ROSAURA', NULL, 'AV. CEDEÑO CALLEJON EL CAMPITO Nº 129', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('139', '14436252', 'VASQUEZ SEQUERA JOHELLY DEL VALLE', NULL, 'CALLE SANTA ROSA Nº 31', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('140', '15966353', 'NELO DE VILLEGAS SORELYS NAILEX', NULL, 'LAS PALMAS RICARDO MONTILLA S/N', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('141', '8787440', 'DIAZ DE PEREZ FLORIDAD MARIBEL', NULL, 'LAS PALMAS CALLEJON EL NARANJO 2 Nº 28', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('142', '16364396', 'GONZALEZ ROMERO YNGRID CARIDAD ', NULL, 'AV. SANTA ISABEL Nº 10', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('143', '8419780', 'ABACHE NAVAS DOMINGA ISAURA', NULL, 'AV. FERMIN TORO CRUCE CON CALLE MENECO Nº 26', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('144', '9892998', 'RIVAS DE RODRIGUEZ MARIBEL COROMOTO', NULL, 'BRISAS DEL VALLE CALLE DANIEL SCOTT', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('145', '13151764', 'MENDEZ ORTEGA RUTH MARINA', NULL, 'URB. LAS PALMAS PINTO SALINA Nº27-B', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `persons` VALUES ('146', '14870383', 'CALEDRA DE LEMUS YACKELIN MAIRE', NULL, 'B/PUERTO RICO CALLE LOS FLORES Nº 57 - B', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('147', '15710016', 'GALINDO HERNANDEZ JOHNNELY ELENA', NULL, 'B/PUERTO RICO CALLE LOS FLORES Nº 57 - B', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('148', '13389289', 'ACASME NORMA BEATRIZ', NULL, 'CALLE UNION BRISAS DE LA VICTORIA', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('149', '8787747', 'SALCEDO VASQUEZ  SILVIA CECILIA', NULL, 'B/BICENTENARIO CALLE BOLIVARIANA Nº24', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('150', '14394134', 'SUBERO FERMIN MAILU JOSEFINA', NULL, 'CALLE INFANTE Nº15 CASCO CENTRAL', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('151', '17689658', 'LARA QUINTERO MERLY HAZARID', NULL, NULL, '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('152', '15023712', 'ORELLANA PEREZ JACKELINE  YONAYDI', NULL, 'CALLE AGUSTIN CODAZZI Nº 16 LA MORERA', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('153', '15393584', 'CASTILLO PIRRONGELLI NISVAY ARGENICA', NULL, 'LAS PALMAS SECTOR MORITA 2 CASA Nº 30', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `persons` VALUES ('154', '17352565', 'HERNANDEZ HIDALGO  NEIBA JOSEFINA', NULL, 'CALLE  SUCRE ENTRE BOLIVAR Y SENDREA', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('155', '11117813', 'SEIJAS ALVAREZ ANAHI COROMOTO', NULL, 'AEROPUERTO CALLE LIBERTAD Nº 29', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('156', '10670130', 'GONZALEZ CARMEN YOJAIRA', NULL, 'RICARDO MONTILLA CALLE  CECILIO ACOSTA Nº 27', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('157', '16803568', 'CONTRERAS  YACKLIN SIRELDA', NULL, 'VISTA HERMOSA 3 CALLEJON LA ESPERANZA Nº 4', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('158', '17063151', 'FUENTES PIMENTEL XIOMAR JOSE', NULL, 'B/LA VICTORIA CALLE EL JOBO', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('159', '16076066', 'ALVAREZ  RAMIREZ DAMARY COROMOTO', NULL, NULL, '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('160', '10670654', 'MEJIAS OCHOA MARIELA GLISSENDA', NULL, 'CALLE LA GLORIA 83-C', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('161', '10671824', 'REYES TORREALBA MAIRELIS DEL VALLE', NULL, 'CALLE ELEAZAR LOPEZ CONTRERAS', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('162', '9890559', 'MONTAÑEZ REINA MARGARITA', NULL, 'AV. LOS LLANOS Nº 67', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `persons` VALUES ('163', '10665057', 'ACEVEDO BRITO ANGEL RAFAEL', NULL, 'URB. ACOSTA CARLES 12-18', '2017-03-11 17:10:20', '2017-03-11 17:10:20');
+INSERT INTO `persons` VALUES ('164', '7285433', 'MENA SALAZAR ZORAIDA JOSEFINA', NULL, NULL, '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('165', '13960365', 'YELITZA MILEIDA ZABALETA MORENO', NULL, NULL, '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('166', '12841029', 'RODRIGUEZ DIAZ YURAIMA JOSEFINA', NULL, 'SECTOR EL JOBO CARRETERA NACIONAL VIA FLORES', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('167', '17272448', 'RODRIGUEZ BLANCO MARIELIS CARIDAD', NULL, 'CALLE EL CARMEN Nº 2', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('168', '14667390', 'GRATEROL VALERA SORANGEL DEL CARMEN', NULL, 'LAS PALMAS CALLE PALMARITO Nº 40', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('169', '9884465', 'PINEDA MARIA LEONIDES ', NULL, 'URB. JESUS DE NAZARETH VEREDA Nº 04 CASA Nº 24', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('170', '15710195', 'LARES ARREAZA ROUSELU JOSEFINA', NULL, 'VISTA HERMOSA CALLE 5 DE JULIO', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('171', '4392551', 'REQUENA DE DIAZ GLADYS JOSEFINA', NULL, 'CALLE LAS BRISAS Nº 48', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('172', '13875306', 'VIELMA MARTINEZ CARINA MERCEDES', NULL, 'URB. VISTA HERMOSA CALLE PRINCIPLA Nº 17', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('173', '17352575', 'ORTIZ MENDEZ FERLIANI MARBELIS', NULL, 'CALLE PRINCIPAL VELLE VERDE Nº 54º', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `persons` VALUES ('174', '29576657', 'LAYA HERNADEZ YSBELIA MARGARITA', NULL, 'AV. SENDREA Nº 29-A FRENTE A SAN JUANOTE', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('175', '14870405', 'PERAZA GABAZUTT BELKYS DEL VALLE', NULL, 'BRISAS DEL VALLE CALLE DANIEL SCOTT Nº 29-B', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('176', '10784591', 'VALE GOYO HUGO ANTONIO', NULL, 'URB. LOS LAURELES CALLE 08 DE OCTUBRE Nº 06', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('177', '16526922', 'FARIAS JACQUELIN DEL VALLE', NULL, 'AV. CEDEÑO CASA Nº 115', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('178', '15710695', 'MOSQUEDA PEDRO ENRIQUE', NULL, 'SECTOR LAS PALMAS CALLEJON PALMARITO Nº 52', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('179', '15491103', 'PERALTA ANA ROSA', NULL, 'BARRIO CHAPARRAL CALLEJON EZEQUIEL ZAMORA', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('180', '11120221', ' MEZONE PALACIOS GERLIS CAROLINA', NULL, 'BARRIO SAN NICOLAS CALLEJO COLON Nº 7', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('181', '9891211', 'NUÑEZ ALEXIS MAURICIO', NULL, 'BARRIO SAN INES CALLE PRINCIPAL', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('182', '8996399', 'SANCHEZ DE GOMEZ GRICEL CARIDAD', NULL, NULL, '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `persons` VALUES ('183', '10667302', 'SILVA GABAZUTT EDIS SOBEIDA', NULL, 'AEROPUERTO NEGRO PRIMERO Nº 13', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('184', '15393944', 'OSORIO MORGADO YADIRA JOSEFINA', NULL, NULL, '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('185', '16145057', 'GIL PEREIRA CARMEN GABRIELA', NULL, '14 DE MARZO CALLE CARACAS Nº 7', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('186', '17961949', 'VELAZQUE PERAZA ROBERT EMILIO JOSE', NULL, 'CALLE LA GLORIA Nº 114', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('187', '16044633', 'DIAZ ESPARRAGOZA BLANCA ERMELINDA', NULL, 'B/EL JOBO SECTOR 2', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('188', '17352094', 'URBINA GONZALEZ JENNIFER DEL VALLE', NULL, 'LAS PALMAS RICARDO MOTILLA Nº 77', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('189', '13513963', 'MORA YOISE YAMILETH', NULL, 'SONA INDUSTRIAL CALLE LUCIANERO Nº 03', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('190', '14861355', 'GONZALEZ ALVARADO HEIDI CAROLINA', NULL, 'CALLE MENECO Nº 35', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `persons` VALUES ('191', '13150432', 'CONDE DIARIMA COROMOTO', NULL, NULL, '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `persons` VALUES ('192', '14146378', 'CARPIO AMARO FRANCY YAMILETH', NULL, 'URB. LOS LAURELES CALLE ESPAÑA Nº 5', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `persons` VALUES ('193', '14642977', 'MAESTRE ALAYON JENNYFER', NULL, 'CALLE ELEAZAR LOPEZ CONTRERAS', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `persons` VALUES ('194', '13448415', 'BRAVO ESCALONA GERMARY ISABEL', NULL, 'CALLEJON UNION BARRIO LA VICTORIA Nº 05', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `persons` VALUES ('195', '15710502', 'PEREZ TORREALBA SORELIS DEL VALLE', NULL, 'CJON/ PALMARITO #99', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('196', '10341620', 'HIDALGO GONZALEZ, MILAGROS', NULL, 'BARRIO SAN JOSE CALLE EL SENDERO NUMERO 17', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('197', '8162686', 'BERLIOZ TOVAR MARIA AUXILIADORA', NULL, 'BRISAS DEL VALLE, SECTOR CUATRO', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('198', '11122779', 'QUINTERO MUÑOZ FLERIDA', NULL, 'C/LAZO MARTI NUMERO 11', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('199', '12277023', 'RAMIREZ MOLINA SOLANGE D', NULL, 'AV. SENDREA, EDIF. DOÑA FLOR', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('200', '10672194', 'BLANCO SOTO DIANA MARGARITA', NULL, 'CALLE NICARAGUA, PUEBLO NUEVO #21', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('201', '11123164', 'OLIVO YELITZA', NULL, 'CALLEJON LAS MERCEDES N 109', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `persons` VALUES ('202', '13576672', 'RODULFO MORENO YOLIBETH SELESTE', NULL, 'URB. GUAFAL MZ 23 CASA 73', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('203', '13152686', 'PALACIOS YULIMAR', NULL, 'VALLE VERDE CALLE LIBERTAD N° 17', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('204', '8995579', 'CEDEÑO SULME ZULAY', NULL, 'URB. EVARISTO LINARES VEGA', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('205', '9889766', 'MANCERA DE PADILLA YILDA', NULL, 'CJON/ PTO FIJO, CALLE LA GLORIA #53-A', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('206', '10670616', 'SAÁNCHEZ, GLORIA MILAGRO', NULL, 'CALLE MENECO Nº 45', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('207', '16804263', 'ZERPA, DAMELYS REGINA', NULL, 'BRISAS DEL VALLE, SECTOR 4, CALLE VICTORIA MANUEL OVALLES, CASA NUMERO 3', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('208', '11121384', 'MARTINEZ CLAUDIA', NULL, 'URB. PARIAPAN, CALLE 2 N° 12', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('209', '17602696', 'SUARES MUJICA INES MARIA', NULL, 'C/AMBROSIO PLAZA, EL JOBO N° 18', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('210', '10673094', 'ESPINOZA YOANNI', NULL, 'AV LAZO MARTI NUMERO 3', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `persons` VALUES ('211', '14395737', 'REQUENA, OLIVIA', NULL, 'B/EL JOBO C/ AMBRIOSO PLAZA N° 03', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('212', '9883477', 'BREA PULIDO JOHYCE ODALINDA', NULL, 'AV. FERMIN TORO, LAS PALMAS', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('213', '12836994', 'MERCADO DIAZ YRAIDA DEL PILAR', NULL, 'B/STA. INES, C/EL CHAPARRO N° 30', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('214', '11116208', 'BRITO M MARYELY A', NULL, 'B/BICENTENARIO C/UNION C/03', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('215', '14394736', 'SANDOVAL HAIDEE', NULL, 'ACHAGUAS EDO APURE', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('216', '10667277', 'CARRUIDO MARIA YOLANDA', NULL, 'PINTO SALINAS, CALLE SANTIAGO TOLEDO', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('217', '9890794', 'LAYA HERNANDEZ NANCY COROMOTO', NULL, 'LAS PALMAS, SECTOR LAS VEGAS #134', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('218', '9888071', 'PAEZ DE ORTIZ, YASMIN MARÍA', NULL, 'VALLE VERDE C/13 DE AGOSTO CASA N° 60', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('219', '12842766', 'RAMIREZ DE MOTA YENNY', NULL, 'AV. FERMIN TORO #10 -10', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('220', '12841467', 'REQUENA DE G. ADRIANA C', NULL, 'AV. FERMIN TORO NUMERO 10', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `persons` VALUES ('221', '16362052', 'RAMIREZ KENCY', NULL, 'URB SANTA ISABEL, MANZANA 5, CASA 3', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `persons` VALUES ('222', '10674216', 'ROJAS EUSMAR', NULL, 'URB PARIAPAN BLOQUE 6 APTO 00-12', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `persons` VALUES ('223', '8781208', 'CEBALLOS JUAREZ NUVIA', NULL, 'CALLE JUNIN, FINAL DE STA ROSA #23', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `persons` VALUES ('224', '9477566', 'ERAZO DE HERNANDEZ CLEIDA DEL CARMEN', NULL, 'AV. ACOSTA CARLES S/N DETRAS DE LOCATEL', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `persons` VALUES ('225', '13151727', 'LEONELY COROMOTO ORTIZ', NULL, 'LOS LAURELES CALLE 8 DE OCTUBRE NUMERO 8', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `persons` VALUES ('226', '11120562', 'TOVAR, VANESA', NULL, 'AV. FERMIN TORO, NUMERO 10', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('227', '7279455', 'PEREZ LAURA ISABEL', NULL, 'CJON LA FLORIDA, EL MAHOMO #4', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('228', '13732849', 'TORREALBA DE GALINDO, MAURA ROSA', NULL, 'B/ SAN NICOLAS CALLEJÓN LAS MERCEDES N° 46', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('229', '11797424', 'VEGA LOPEZ JUSTINA DEL CARMEN', NULL, 'VUELTA LAS PIEDRAS, LAS PALMAS', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('230', '10671340', 'SOJO DE SCOTT LISLAY DE LA C.', NULL, 'AV. FERMIN TORO, LAS PALMAS #42', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('231', '10377229', 'CORINA REQUENA DE GASSETE', NULL, NULL, '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('232', '9596415', 'HERNANDEZ DE OSORIO LUZ HAIDES', NULL, 'CALLE STA. ROSA #60', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('233', '11123640', 'ARZOLA ARLETTE MAYANING', NULL, 'BARRIO SAN JOSE, CALLE ZERPA #07', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('234', '17689397', 'PAZ ESPINOZA, MAIBIN JOHANA', NULL, 'LOS LAURELES CALLE ARAURE URB. LUIS GALLARDO', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `persons` VALUES ('235', '9968521', 'HERNANDEZ OMAIRA JOSEFINA', NULL, 'CALLE JUAN FLORES', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('236', '13768787', 'SANTELIZ GARCIA FRANCIS MARGOT', NULL, 'AV STA ISABEL SECTOR SEGURO SOCIAL CASA 18', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('237', '13152449', 'MEDINA ISTURIZ, YULY JOSEFINA', NULL, 'LAS PALMAS, CALLE AURORA, NUMERO 32-B', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('238', '8787896', 'DANNY COROMOTO ROJAS MILANO', NULL, 'CALLE SANTA ISABEL NUMERO 6', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('239', '14146984', 'LEIDY MONTESINO', NULL, 'CALLE PRINCIPAL SAN NICOLAS NUMERO 11', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('240', '10674035', 'THAYS DORTA', NULL, 'LOS NARANJOS NUMERO 19', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('241', '9885479', 'ALTUVE MORENO, TANIA', NULL, 'SECTOR LAS PALMAS BARRIO EL PARAISO CALIFORNIA', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('242', '9666925', 'TANDIOY SHASOY, MARIA MERCEDES', NULL, 'BRISAS DEL VALLE, SECTOR 1, CALLE JOSE FRANCISCO TORREALBA, NUMERO 33', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `persons` VALUES ('243', '7297828', 'RAMIREZ AYLEMAR', NULL, 'CALLE RIBAS DAVILA NUMERO 10', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('244', '9883079', 'FUNEZ EMILIA', NULL, 'AV. FERMIN TORO PROLONGACIÓN MENECO CASA N° 25', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('245', '15393680', 'ROSALEZ RODRIGUEZ, ROSMARI OSCARINA', NULL, 'CALLE EL CARME, LOPEZ CONTRERA, CASA S/N', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('246', '11765799', 'SOTILLO MARTINEZ, YANET', NULL, 'VISTA HERMOSA 3 CALLE LA ESPERANZA NUMERO 17', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('247', '9883922', 'LUGO GAMARRA SILVIA FILOMENA', NULL, 'CALLE ANDRES BELLO NUMERO 44 LOS AGUACATES', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('248', '18043923', 'SÁNCHEZ, YESICA', NULL, 'FLORES', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('249', '11118598', 'CARBALLO SANCHEZ YASMIN LUCIA', NULL, 'URB. TERRAZAS DEL GUAFAL CALLE 5 CASA 60', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('250', '11116436', 'RODRIGUEZ DE R. MERCAN M.', NULL, 'BARRIO LA ESPERANZA, CALLE VARGAS', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('251', '13874371', 'MADERO PIÑATE, MARINES DE JESUS', NULL, 'URB EL GUAFAL CALIFORNIA II C/PEDRO PEREZ NUMERO 35', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `persons` VALUES ('252', '14395016', 'ROJAS PARATORE MARLIN ALEXANDRA', NULL, 'CALLE SIMON RODRIGUEZ #74', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `persons` VALUES ('253', '15711244', 'GARCIA ROSILETH', NULL, 'BARRIO VALLE VERDE, CJON LOS MANGOS', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `persons` VALUES ('254', '8778307', 'REQUENA GARCÍA, LUZMILA COROMOTO', NULL, 'BRISAS DEL VALLE SECTOR 3 C/DANIEL SCOOT GUTIERREZ', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `persons` VALUES ('255', '8354746', 'SANTAELLA GONZÁLEZ, VELQUIS MATIAS', NULL, 'CALLE SANTA EDUVIGES N°05 SECTOR   14 DE MARZO', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `persons` VALUES ('256', '10673581', 'PÉREZ OLIVO,YAMIRA JOSEFINA', NULL, 'CAMORUQUITO SECTOR  LA CHINGA', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `persons` VALUES ('257', '13864937', 'VILLAMIZAR REAZA, HEIDDY CAROLINA', NULL, 'VALLE VERDE CALLE LIBERTAD S/N', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `persons` VALUES ('258', '16075643', 'AMARO, ANA MERCEDES', NULL, 'URB. LOS LAURELES SECTOR LA LAGUNITA CALLE JOSÉ GREGORIO HERNÁNDEZ N° 18', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('259', '10670045', 'OCHOA,YELITZA', NULL, 'URBANIZACIÓN EL GUAFAL 52 MANZANA 8', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('260', '8803772', 'INFANTE DE PÉREZ, MARÍA TRINIDAD', NULL, 'URB ACOSTA CARLES CALLE 07 CASA N° 07-3', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('261', '9883378', 'TORREALBA DE REAZA, CARMEN LUISA', NULL, 'FINAL DE LA CALLE SENDREA N°6-A/LOS ANGELES   ', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('262', '11122859', 'CASTILLO DE BREA, ROCSANA YAMILET', NULL, 'BARRIO LOS CEDROS SANTA EDUVIGES S/N', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('263', '11117399', 'PINTO LEÓN, YENIFER CARIDAD', NULL, 'URB. EL PORTAL, CALLE R, Nº07', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('264', '10669589', 'CARMONA SILVA, YSABEL MARINA', NULL, 'URBANIZACIÓN LAS PALMAS CALLEJÓN EL MILAGRO N°14', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('265', '11117854', 'DÍAZ FLORES, YIPSI COROMOTO', NULL, 'VALLE VERDE CALLE PRINCIPAL N°139', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('266', '13340423', 'BLANDON, LUZ MERY', NULL, '  BARRIO VALLE VERDE CALLE  13 DE AGOSTTO N°62', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('267', '10268132', 'JASPE GARCÍA, CARMEN ALICIA', NULL, 'GUAFAL MANZANA 8 CASA  5', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('268', '11051901', 'LEGÓN  CORDERO, AULA ROSA', NULL, 'SECTOR EL JOBO II  CALLE MIRANDA CRUCE CON MARISOL', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `persons` VALUES ('269', '13874027', 'RAMÍREZ DE CAMEJO, MARÍA ELENA', NULL, ' ZONA INDUSTRIAL LUCIANERO', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('270', '10.674.207.', 'LAYA HERNÁNDEZ, YSABELIA MARGARITA', NULL, 'EDIF. DON ANTONIO AV. SENDREA N°29', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('271', '7297028', 'LARA ESTHER, MARÍA', NULL, 'SANTA BARBARA', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('272', '8998034', ' LARA DE PÉREZ, ZULAY ISABEL', NULL, 'CALLE MIRANDA ENTRE MELLADO Y ROSCIO CASA N° 32-17', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('273', '14643024', 'SÁNCHEZ ARREAZA, YUSELY  NOHELIA', NULL, 'BRISAS DEL VALLE CALLE PRINCIPAL LOS MANGOS', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('274', '11121524', 'ALVIA DE RODRÍGUEZ, NANEY JUDITH', NULL, 'CALLE MENECO CASA N°135-1', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('275', '16998974', 'FERNÁNDEZ, TASBETH', NULL, 'URB.PARIAPAN B/9 APTO 00-05', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('276', '15710803', ' BRIZUELA ORTEGA, FRANKELI ANTONIA', NULL, ' CALLE ZAMORA CALLEJÓN LOS NARANJELLOS S/N', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('277', '5072030', 'TAVERA DE HERNANDEZ MARIA SOLEDAD', NULL, 'BARRIO RICARDO MONTILLA , CAALE PRINCIPAL S/N', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `persons` VALUES ('278', '28012889', 'NIEVES FLORRIMAR ', NULL, 'URB. EL PORTAL, CALLE B, Nº03', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('279', '9891370', ' QUINTERO DE MARTÍNEZ, CLEISIS  ESTORLINA', NULL, ' A.V. FERMÍN TOTO PASAJE N° 1 CASA N° 07            ', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('280', '10011119', ' BERTI BERTI, YOLIMAR', NULL, '  URB. BELLA VISTA MANZANA 05 N°08', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('281', '10674157', 'MARTÍNEZ ROMERO, YRAIDA YSOLINA', NULL, 'B/PEDRO ZARAZA SECTOR LAS CASITAS N°05', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('282', '10673269', 'LANDAETA  DE GARCÍA, LAURY ESPERANZA', NULL, 'URB. SANTA ISABEL MANAZANA 1  N°11', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('283', '12840842', 'LEZAMA RONDÓN YAE DEL CARMEN', NULL, 'URB. PARIAPAN SECTOR 01  VEREDA  14', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('284', '11796672', 'CAMPOS GARCÍA, GRISELA JOSEFINA', NULL, 'CALLE LOS MORRITOS N°08', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('285', '8995137', 'DELALGADO RAMIREZ, YERNY MICAELA', NULL, 'A.V. LO LLANOS PRINCIPAL DE BRISAS DEL VALLE N°50', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('286', '13241534', 'MORA BRITO, YANNINA DE LOS ANGELES', NULL, 'CALLE LA ESPERANZA CASA N° 1', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('287', '11690404', 'FERNÁNDEZ PIÑATE, YANELY  JOSEFINA', NULL, ' BRISAS DEL VALLE SECTOR 4 CALLE MARIANA MIJARES CASA N° 35-A', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `persons` VALUES ('288', '11120908', 'BANDRES MENDOZA, BETSI  CARIDAD', NULL, 'CALLEJÓN  HUMBOLTH', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('289', '13576803', 'HERNÁNDEZ,  ALIDA  CARIDAD', NULL, 'LOS CEDROS CALLE SANTA  EDUVIGES', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('290', '8828617', 'OLIVEROS PINO, DELIA YELITZA', NULL, 'FINAL C/CECILIA ACOSTA N° 47 LAS PALMAS', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('291', '12840236', 'HERNÁNDEZ GARCÍA, KARLHA CARIDAD', NULL, 'CALLE INFANTE 87B', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('292', '11120165', 'SANTIAGO BLANCO, MARÍA ACACIA', NULL, 'LA MORERA C/LA UNIDAD N° 7-A', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('293', '9888465', ' PINEDA,  MARÍA  LEONIDES', NULL, 'URBANIZACIÓN JESÚS DE NAZARETH N° 24', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('294', '12899768', 'CASTILLO MEDINA MARISELA', NULL, 'CALLE ZAMORA VEREDA 1', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `persons` VALUES ('295', '8996442', 'HERNÁNDEZ GONZÁLEZ,  RAIZA DALILA', NULL, 'AV. FERMÍN TORO PROLONGACIÓN  CALLE MENECO N°04', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('296', '14146398', 'CARPIO AMARO, FRANCY YAMILETH', NULL, 'CALLE ESPAÑA LOS LAURELES N°05', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('297', '13447552', 'RANGEL PALACIOS, MARTHA NOHEMY', NULL, 'URB. HUGO CHAVÉZ FRIAS, AV. SIMÓN BOLÍVAR TORRE 10', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('298', '13150627', 'SUAREZ ARREAZA, YULASI DEYANIRA', NULL, 'AV. CEDEÑO CALLEJÓN EL CAMPITO', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('299', '8783564', 'HENRIQUEZ, AURY', NULL, 'LOS NARANJOS CALLE SAN LUIS Nº30', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('300', '10665461', 'TORRES, NERY  ERNESTINA', NULL, 'CALLE PRTINCIPAL SAN NICOLAS N° 41', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('301', '13576157', 'CASTRO LAYA, CAROLINA DEL VALLE', NULL, 'BARRIO BICENTENARIO SECTOR YUINTA CASA N°1', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('302', '11116946', 'RIBAS GÓMEZ, YAMARA JOSEFINA', NULL, 'URB. BELLA VISTA MANZANA 11 CASA 05', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('303', '10665844', 'DÍAZ  DE DI BERARDINO, MARY  LENNY', NULL, 'URB. CARMEN ELINA AV. PRINCIPAL N° 09', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('304', '13151384', 'INFANTE LUGO, MERCEDES YOVANKA', NULL, 'CALLE SAN JUAN  N° 24', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('305', '14147513', 'RIVAS ARCHILA, LUISA MARINA', NULL, 'COLINAS DE 14 DE MARZO N° 15', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `persons` VALUES ('306', '16505463', 'RENGIFO TORREALBA, ELYN CAROLINA', NULL, 'CALLE LAZO MARTÍN CASCO CENTRAL N°15', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('307', '6871397', 'GONZÁLEZ DÍAZ, ROSA MARÍA', NULL, 'BARRIO RICARDO MONTILLA C/LOS MANGOS N° 18', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('308', '7293393', 'MÉNDEZ DE VARGAS,  PAULINA', NULL, 'URB. SANTA ISABEL MANZANA 06 CASA 02 AV. 101', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('309', '17271338', 'GASCÓN CONDALES, YANCY DALINA', NULL, 'BARRIO SAN NICOLÁS   CALLE  PRINCIPAL N° 05', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('310', '11120981', 'HURTADO SILVA, LUZ MARINA', NULL, 'URBANIZACIÓN LAS PALMAS N° 43', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('311', '12841643', 'SÁNCHEZ  TOVAR, ZAIDA MARGARITA', NULL, 'CALLE INFANTE N°75', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('312', '9885052', 'ROMÁN DE DELGADO, VILDA LUISA', NULL, 'LOS CEDROS', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('313', '1112322', 'IZQUIEL, MARVELYZ', NULL, 'BANCO OBRERO ROSA INÉS- INVACCIÓN', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `persons` VALUES ('314', '8995508', 'RAMOS MONTEVIDEO, GRISEL  PASTORA', NULL, 'SECTOR PUEBLO NUEVO CALLE 5 DE JULIO N° 4', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('315', '13874923', 'YULIXA SILVA', NULL, 'BRISA DE LA VICTORIA', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('316', '14394152', 'MOTA MARÍA EMILIA', NULL, 'BARRIO 14 DE MARZO CALLE CARACAS N° 23', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('317', '10665491', 'PÉREZ, TIBISAY DEL ROSARIO', NULL, 'CALLE CEMENTERIO N°11', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('318', '15710176', 'COVA RODRÍGUEZ, NAIROBIS ANDREINA', NULL, ' BRISAS DEL VALLE SECTOR 5 AL LADO DEL CIRCUITO JUDICIAL', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('319', '15710793', 'MARCANO  VARGAS, MILDEY JOSEFINA', NULL, 'LAS PALMAS MILAGRO  II CALLE 21 DE MAYO S/N', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('320', '14744668', 'CARAQUIMA YEGUEZ, JHOSELY DEL VALLE', NULL, 'AV. CEDEÑO N°77', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `persons` VALUES ('321', '10758212', 'MARCANO VARGAS, OSCAR JOSÉ', NULL, 'URB. ALTO DE FENIX CASA N°1 CALLE PRINCIPAL', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+
+  
+# | Vaciado de tabla 'plato_rubro'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'plato_rubro'
+# +------------------------------------->
+CREATE TABLE `plato_rubro` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `plato_id` int(11) NOT NULL,
+  `rubro_id` int(11) NOT NULL,
+  `cantidad` smallint(6) NOT NULL,
+  `medida` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'plato_rubro'
+# +------------------------------------->
+INSERT INTO `plato_rubro` VALUES ('1', '1', '1', '1000', 'gramos', '2016-11-25 13:20:56', '2016-11-25 13:20:56');
+INSERT INTO `plato_rubro` VALUES ('2', '1', '6', '1000', 'gramos', '2016-11-25 13:20:56', '2016-11-25 13:20:56');
+INSERT INTO `plato_rubro` VALUES ('3', '2', '7', '1000', 'gramos', '2016-11-25 13:21:37', '2016-11-25 13:21:37');
+INSERT INTO `plato_rubro` VALUES ('4', '2', '5', '1000', 'gramos', '2016-11-25 13:21:37', '2016-11-25 13:21:37');
+INSERT INTO `plato_rubro` VALUES ('5', '3', '17', '1', 'cantidad', '2017-01-12 14:05:56', '2017-01-12 14:05:56');
+INSERT INTO `plato_rubro` VALUES ('6', '4', '4', '1000', 'gramos', '2017-03-11 17:05:34', '2017-03-11 17:05:34');
+INSERT INTO `plato_rubro` VALUES ('7', '4', '6', '1500', 'gramos', '2017-03-11 17:05:34', '2017-03-11 17:05:34');
+INSERT INTO `plato_rubro` VALUES ('8', '5', '18', '1', 'cantidad', '2017-03-11 17:07:22', '2017-03-11 17:07:22');
+
+  
+# | Vaciado de tabla 'platos'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'platos'
+# +------------------------------------->
+CREATE TABLE `platos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria_plato_id` int(11) NOT NULL,
+  `plato` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'platos'
+# +------------------------------------->
+INSERT INTO `platos` VALUES ('1', '1', 'Arepa con Carne Mechada', '2016-11-25 13:20:56', '2016-11-25 13:20:56');
+INSERT INTO `platos` VALUES ('2', '3', 'Arroz con Pollo', '2016-11-25 13:21:37', '2016-11-25 13:21:37');
+INSERT INTO `platos` VALUES ('3', '6', 'Naranja', '2017-01-12 14:05:56', '2017-01-12 14:05:56');
+INSERT INTO `platos` VALUES ('4', '3', 'Espaguetti con Carne Molida', '2017-03-11 17:05:34', '2017-03-11 17:05:34');
+INSERT INTO `platos` VALUES ('5', '5', 'Nutrichicha', '2017-03-11 17:07:22', '2017-03-11 17:07:22');
+
+  
+# | Vaciado de tabla 'registers'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'registers'
+# +------------------------------------->
+CREATE TABLE `registers` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) NOT NULL,
+  `person_id` int(11) NOT NULL,
+  `escolaridad_id` int(11) NOT NULL,
+  `mencion_id` int(11) NOT NULL,
+  `ano_id` int(11) NOT NULL,
+  `seccion_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=341 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'registers'
+# +------------------------------------->
+INSERT INTO `registers` VALUES ('1', '1', '1', '1', '1', '1', '1', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `registers` VALUES ('2', '2', '2', '1', '1', '1', '1', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `registers` VALUES ('3', '3', '3', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('4', '4', '4', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('5', '5', '5', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('6', '6', '6', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('7', '7', '7', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('8', '8', '8', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('9', '9', '9', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('10', '10', '10', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('11', '11', '11', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('12', '12', '12', '1', '1', '1', '1', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `registers` VALUES ('13', '13', '13', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('14', '14', '14', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('15', '15', '14', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('16', '16', '15', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('17', '17', '16', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('18', '18', '17', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('19', '19', '18', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('20', '20', '19', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('21', '21', '20', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('22', '22', '21', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('23', '23', '22', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('24', '24', '23', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('25', '25', '24', '1', '1', '1', '1', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `registers` VALUES ('26', '26', '25', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('27', '27', '26', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('28', '28', '27', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('29', '29', '28', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('30', '30', '29', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('31', '31', '30', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('32', '32', '31', '1', '1', '1', '1', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `registers` VALUES ('33', '33', '32', '1', '1', '2', '12', '2017-03-11 14:20:22', '2017-03-11 14:20:22');
+INSERT INTO `registers` VALUES ('34', '34', '33', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('35', '35', '34', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('36', '36', '35', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('37', '37', '36', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('38', '38', '37', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('39', '39', '38', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('40', '40', '39', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('41', '41', '40', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('42', '42', '41', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('43', '43', '42', '1', '1', '2', '12', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `registers` VALUES ('44', '44', '43', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('45', '45', '44', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('46', '46', '45', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('47', '47', '46', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('48', '48', '47', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('49', '49', '48', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('50', '50', '49', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('51', '51', '50', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('52', '52', '51', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('53', '53', '52', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('54', '54', '53', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('55', '55', '54', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('56', '56', '55', '1', '1', '2', '12', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `registers` VALUES ('57', '57', '56', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('58', '58', '57', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('59', '59', '58', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('60', '60', '59', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('61', '61', '60', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('62', '62', '61', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('63', '63', '62', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('64', '64', '63', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('65', '65', '64', '1', '1', '2', '12', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `registers` VALUES ('66', '66', '65', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('67', '67', '66', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('68', '68', '67', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('69', '69', '68', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('70', '70', '69', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('71', '71', '70', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('72', '72', '71', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('73', '73', '72', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('74', '74', '73', '1', '1', '1', '2', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `registers` VALUES ('75', '75', '74', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('76', '76', '75', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('77', '77', '76', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('78', '78', '77', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('79', '79', '78', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('80', '80', '79', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('81', '81', '80', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('82', '82', '81', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('83', '83', '82', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('84', '84', '83', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('85', '85', '84', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('86', '86', '85', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('87', '87', '86', '1', '1', '1', '2', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `registers` VALUES ('88', '88', '87', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('89', '89', '88', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('90', '90', '89', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('91', '91', '90', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('92', '92', '91', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('93', '93', '92', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('94', '94', '93', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('95', '95', '94', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('96', '96', '95', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('97', '97', '96', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('98', '98', '97', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('99', '99', '98', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('100', '100', '99', '1', '1', '1', '2', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `registers` VALUES ('101', '101', '100', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('102', '102', '101', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('103', '103', '102', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('104', '104', '103', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('105', '105', '104', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('106', '106', '105', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('107', '107', '106', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('108', '108', '107', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('109', '109', '108', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('110', '110', '109', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('111', '111', '110', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('112', '112', '111', '1', '1', '2', '11', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `registers` VALUES ('113', '113', '112', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('114', '114', '112', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('115', '115', '113', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('116', '116', '114', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('117', '117', '115', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('118', '118', '116', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('119', '119', '117', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('120', '120', '118', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('121', '121', '119', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('122', '122', '120', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('123', '123', '121', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('124', '124', '122', '1', '1', '2', '11', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `registers` VALUES ('125', '125', '123', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('126', '126', '124', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('127', '127', '125', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('128', '128', '126', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('129', '129', '127', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('130', '130', '128', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('131', '131', '129', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('132', '132', '130', '1', '1', '2', '11', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `registers` VALUES ('133', '133', '131', '1', '1', '3', '21', '2017-03-11 17:10:16', '2017-03-11 17:10:16');
+INSERT INTO `registers` VALUES ('134', '134', '132', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('135', '135', '133', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('136', '136', '134', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('137', '137', '85', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('138', '138', '135', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('139', '139', '136', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('140', '140', '137', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('141', '141', '138', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('142', '142', '139', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('143', '143', '140', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('144', '144', '141', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('145', '145', '142', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('146', '146', '143', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('147', '147', '144', '1', '1', '3', '21', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `registers` VALUES ('148', '148', '145', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('149', '149', '62', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('150', '150', '146', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('151', '151', '147', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('152', '152', '148', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('153', '153', '149', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('154', '154', '150', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('155', '155', '151', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('156', '156', '152', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('157', '157', '153', '1', '1', '3', '21', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `registers` VALUES ('158', '158', '154', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('159', '159', '155', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('160', '160', '156', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('161', '161', '157', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('162', '162', '158', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('163', '163', '159', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('164', '164', '160', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('165', '165', '160', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('166', '166', '161', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('167', '167', '162', '1', '1', '3', '21', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `registers` VALUES ('168', '168', '163', '1', '1', '3', '21', '2017-03-11 17:10:20', '2017-03-11 17:10:20');
+INSERT INTO `registers` VALUES ('169', '169', '164', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('170', '170', '165', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('171', '171', '166', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('172', '172', '167', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('173', '173', '168', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('174', '174', '169', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('175', '175', '170', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('176', '176', '171', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('177', '177', '172', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('178', '178', '173', '1', '1', '3', '22', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `registers` VALUES ('179', '179', '174', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('180', '180', '175', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('181', '181', '176', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('182', '182', '177', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('183', '183', '178', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('184', '184', '178', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('185', '185', '179', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('186', '186', '180', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('187', '187', '181', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('188', '188', '182', '1', '1', '3', '22', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `registers` VALUES ('189', '189', '183', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('190', '190', '184', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('191', '191', '185', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('192', '192', '186', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('193', '193', '187', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('194', '194', '188', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('195', '195', '125', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('196', '196', '189', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('197', '197', '165', '1', '1', '3', '22', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `registers` VALUES ('198', '198', '190', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('199', '199', '4', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('200', '200', '191', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('201', '201', '192', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('202', '202', '193', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('203', '203', '194', '1', '1', '3', '22', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `registers` VALUES ('204', '204', '195', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('205', '205', '196', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('206', '206', '188', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('207', '207', '197', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('208', '208', '198', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('209', '209', '199', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('210', '210', '200', '1', '1', '4', '31', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `registers` VALUES ('211', '211', '201', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('212', '212', '202', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('213', '213', '203', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('214', '214', '204', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('215', '215', '205', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('216', '216', '206', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('217', '217', '207', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('218', '218', '63', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('219', '219', '50', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('220', '220', '208', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('221', '221', '209', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('222', '222', '210', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('223', '223', '105', '1', '1', '4', '31', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `registers` VALUES ('224', '224', '16', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('225', '225', '211', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('226', '226', '212', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('227', '227', '213', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('228', '228', '214', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('229', '229', '215', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('230', '230', '216', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('231', '231', '217', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('232', '232', '218', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('233', '233', '219', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('234', '234', '220', '1', '1', '4', '31', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `registers` VALUES ('235', '235', '221', '1', '1', '4', '32', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `registers` VALUES ('236', '236', '222', '1', '1', '4', '32', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `registers` VALUES ('237', '237', '223', '1', '1', '4', '32', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `registers` VALUES ('238', '238', '224', '1', '1', '4', '32', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `registers` VALUES ('239', '239', '225', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('240', '240', '226', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('241', '241', '227', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('242', '242', '228', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('243', '243', '229', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('244', '244', '230', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('245', '245', '231', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('246', '246', '232', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('247', '247', '233', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('248', '248', '234', '1', '1', '4', '32', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `registers` VALUES ('249', '249', '235', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('250', '250', '236', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('251', '251', '237', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('252', '252', '238', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('253', '253', '239', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('254', '254', '240', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('255', '255', '241', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('256', '256', '242', '1', '1', '4', '32', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `registers` VALUES ('257', '257', '243', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('258', '258', '244', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('259', '259', '245', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('260', '260', '246', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('261', '261', '247', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('262', '262', '248', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('263', '263', '249', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('264', '264', '250', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('265', '265', '251', '1', '1', '4', '32', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `registers` VALUES ('266', '266', '252', '1', '1', '4', '32', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `registers` VALUES ('267', '267', '253', '1', '1', '4', '32', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `registers` VALUES ('268', '268', '254', '1', '1', '4', '32', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `registers` VALUES ('269', '269', '80', '1', '1', '5', '41', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `registers` VALUES ('270', '270', '255', '1', '1', '5', '41', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `registers` VALUES ('271', '271', '256', '1', '1', '5', '41', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `registers` VALUES ('272', '272', '257', '1', '1', '5', '41', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `registers` VALUES ('273', '273', '258', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('274', '274', '259', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('275', '275', '260', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('276', '276', '261', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('277', '277', '262', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('278', '278', '263', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('279', '279', '264', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('280', '280', '150', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('281', '281', '265', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('282', '282', '266', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('283', '283', '267', '1', '1', '5', '41', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `registers` VALUES ('284', '284', '268', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('285', '285', '269', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('286', '286', '270', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('287', '287', '271', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('288', '288', '272', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('289', '289', '273', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('290', '290', '274', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('291', '291', '275', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('292', '292', '276', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('293', '293', '277', '1', '1', '5', '41', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `registers` VALUES ('294', '294', '278', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('295', '295', '279', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('296', '296', '280', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('297', '297', '281', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('298', '298', '282', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('299', '299', '283', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('300', '300', '284', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('301', '301', '285', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('302', '302', '286', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('303', '303', '287', '1', '1', '5', '41', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `registers` VALUES ('304', '304', '288', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('305', '305', '289', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('306', '306', '290', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('307', '307', '291', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('308', '308', '292', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('309', '309', '293', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('310', '310', '294', '1', '1', '5', '42', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `registers` VALUES ('311', '311', '295', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('312', '312', '296', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('313', '313', '297', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('314', '314', '298', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('315', '315', '299', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('316', '316', '300', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('317', '317', '301', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('318', '318', '302', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('319', '319', '303', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('320', '320', '180', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('321', '321', '304', '1', '1', '5', '42', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `registers` VALUES ('322', '322', '305', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('323', '323', '11', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('324', '324', '306', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('325', '325', '307', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('326', '326', '308', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('327', '327', '309', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('328', '328', '310', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('329', '329', '311', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('330', '330', '312', '1', '1', '5', '42', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `registers` VALUES ('331', '331', '313', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('332', '332', '314', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('333', '333', '315', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('334', '334', '316', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('335', '335', '49', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('336', '336', '317', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('337', '337', '318', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('338', '338', '319', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('339', '339', '320', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `registers` VALUES ('340', '340', '321', '1', '1', '5', '42', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+
+  
+# | Vaciado de tabla 'representantes'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'representantes'
+# +------------------------------------->
+CREATE TABLE `representantes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `persona_id` int(11) NOT NULL,
+  `estudiante_id` int(11) NOT NULL,
+  `parentesco` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `autorizacion` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'representantes'
+# +------------------------------------->
+INSERT INTO `representantes` VALUES ('1', '1', '1', 'MADRE', '0', '2017-01-19 14:33:03', '2017-01-19 14:33:03');
+
+  
+# | Vaciado de tabla 'roles'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'roles'
+# +------------------------------------->
+CREATE TABLE `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'roles'
+# +------------------------------------->
+INSERT INTO `roles` VALUES ('1', 'Inscripciones', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `roles` VALUES ('2', 'Comedor', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'rubros'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'rubros'
+# +------------------------------------->
+CREATE TABLE `rubros` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `categoria_rubro_id` int(11) NOT NULL,
+  `rubro` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'rubros'
+# +------------------------------------->
+INSERT INTO `rubros` VALUES ('1', '1', 'Harina de Maíz', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('2', '1', 'Harina de Trigo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('3', '2', 'Pasta Corta', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('4', '2', 'Espaguetti', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('5', '4', 'Pollo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('6', '4', 'Carne de Res', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('7', '3', 'Arroz', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('8', '3', 'Caraota', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('9', '3', 'Arbejas', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('10', '5', 'Papa', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('11', '5', 'Zanahoria', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('12', '5', 'Tomate', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('13', '7', 'Azucar', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('14', '7', 'Sal', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('15', '6', 'Parchita', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('16', '6', 'Patilla', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rubros` VALUES ('17', '6', 'Naranja', '2017-03-11 17:03:54', '2017-03-11 17:03:54');
+INSERT INTO `rubros` VALUES ('18', '7', 'Nutrichicha', '2017-03-11 17:06:41', '2017-03-11 17:06:41');
+
+  
+# | Vaciado de tabla 'secciones'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'secciones'
+# +------------------------------------->
+CREATE TABLE `secciones` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ano_id` int(10) unsigned NOT NULL,
+  `seccion` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'secciones'
+# +------------------------------------->
+INSERT INTO `secciones` VALUES ('1', '1', 'A', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('2', '1', 'B', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('3', '1', 'C', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('4', '1', 'D', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('5', '1', 'E', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('6', '1', 'F', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('7', '1', 'G', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('8', '1', 'H', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('9', '1', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('10', '1', 'J', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('11', '2', 'A', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('12', '2', 'B', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('13', '2', 'C', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('14', '2', 'D', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('15', '2', 'E', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('16', '2', 'F', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('17', '2', 'G', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('18', '2', 'H', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('19', '2', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('20', '2', 'J', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('21', '3', 'A', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('22', '3', 'B', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('23', '3', 'C', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('24', '3', 'D', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('25', '3', 'E', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('26', '3', 'F', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('27', '3', 'G', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('28', '3', 'H', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('29', '3', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('30', '3', 'J', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('31', '4', 'A', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('32', '4', 'B', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('33', '4', 'C', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('34', '4', 'D', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('35', '4', 'E', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('36', '4', 'F', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('37', '4', 'G', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('38', '4', 'H', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('39', '4', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('40', '4', 'J', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('41', '5', 'A', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('42', '5', 'B', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('43', '5', 'C', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('44', '5', 'D', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('45', '5', 'E', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('46', '5', 'F', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('47', '5', 'G', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('48', '5', 'H', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('49', '5', 'I', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `secciones` VALUES ('50', '5', 'J', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'students'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'students'
+# +------------------------------------->
+CREATE TABLE `students` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ci` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `full_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `birth_place` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=341 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'students'
+# +------------------------------------->
+INSERT INTO `students` VALUES ('1', '30276555', 'BOLIVAR MENDEZ FABIAN JOSE ', '2004-06-07', 'PUERTO CABELLO', 'M', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `students` VALUES ('2', '30276599', 'BRICEÑO DELGADO ROSSEYLIN ALEXANDRA DEL CARMEN', '2004-01-11', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `students` VALUES ('3', '30276639', 'GUILLEN PUERTA ANYELI DANIELA', '2004-03-04', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:27', '2017-03-10 20:20:27');
+INSERT INTO `students` VALUES ('4', '30276740', 'VASQUEZ GARCIA GUSTAVO ELIEL', '2004-01-25', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('5', '30325515', 'MALAVE PRADA EDUARDO ', '2004-06-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('6', '30463549', 'GIMENEZ BANDRES JOTBRAN ALEXANDER', '2004-05-31', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('7', '30463571', 'TORREALBA BECERRA GIOVANY JOSE', '2004-07-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('8', '30464095', 'SILVA MONTEVIDEO MANUEL ALEJANDRO', '2004-10-10', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('9', '30626484', 'VEGAS RODRIGUEZ FREDDY ANDRES', '2004-04-25', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('10', '30626632', 'ACURERO VELASQUEZ EDWARD JOSE', '2004-09-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('11', '30626770', 'ALVAREZ CELIS NAUJDALIS MARIA', '2004-11-12', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('12', '30636551', 'MEDINA HERRERA AXEL LEONARDO', '2004-08-20', 'sAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('13', '30703090', 'GUERRERO COA JACQUELINE CARIDAD', '2004-10-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:28', '2017-03-10 20:20:28');
+INSERT INTO `students` VALUES ('14', '30703141', 'GARCIA LANDAETA RAFAEL EDUARDO', '2004-08-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('15', '30703142', 'GARCIA LANDAETA JOSE GABRIEL', '2004-08-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('16', '30790348', 'BRAVO RIVERO MARIA CELESTE', '2004-02-14', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('17', '30873900', 'MORALES MALDONADO KELVIN JOSE', '2004-06-10', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('18', '30961569', 'ARTEAGA BLANCO KEVIN BRAYAN', '2004-03-24', 'CARACAS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('19', '31031551', 'LAMB BUSTAMANTE JOSE DAVID', '2004-08-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('20', '31031726', 'REYES SANCHEZ JONATHAN JOSE', '2004-11-13', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('21', '31142122', 'MEZA GIUNTA GIORGIO RAFAEL', '2004-02-01', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('22', '31171700', 'TORRES ACOSTA HERMES EZEQUIEL', '2004-11-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('23', '31171716', 'AGUIAR TORRES MISAEL AUGUSTO', '2004-12-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('24', '31261636', 'CARDERA BLANCO DARIANGEL DAYSANE', '2004-11-11', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('25', '31261645', 'CEBALLOS RODRIGUEZ LUIS ARMANDO', '2004-12-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:29', '2017-03-10 20:20:29');
+INSERT INTO `students` VALUES ('26', '31345707', 'ARAUJO PERDOMO LISANDRO JOSE', '2004-08-11', 'sAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('27', '31415208', 'MORGADO OCHOA DANIEL ALEXANDER', '2004-09-12', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('28', '31415273', 'GOMEZ BRUZUAL LENYN ALFONSO', '2004-01-15', 'sAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('29', '31415660', 'FARIAS TORRES DANIELA YENNIFER', '2004-04-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('30', '31473303', 'ALBORNOZ QUINTANA PEDRO MANUEL', '2005-01-09', 'ZARAZA-GUARICO', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('31', '31743005', 'REYNA COELLO MIGUEL ENRIQUE', '2004-12-25', ' SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('32', '31878238', 'FARIAS CARDERA NIXON JOSE', '2004-10-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-10 20:20:30', '2017-03-10 20:20:30');
+INSERT INTO `students` VALUES ('33', '29671613', 'ATAY SANDOVAL, JEAN MARC', '2003-01-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:22', '2017-03-11 14:20:22');
+INSERT INTO `students` VALUES ('34', '29671721', 'GONZÁLEZ MALDONADO, MARÍA GABRIELA', '2003-02-22', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('35', '29671881', 'CASTILLO YNFANTE,  BRANDO ANTONIO', '2003-03-22', 'CARACAS ', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('36', '29781540', 'LUGO PEÑA, DEIKER AARON', '2003-05-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('37', '29858544', 'HERNÁNDEZ HERNÁNDEZ JEFERSON LEONARDO', '2003-01-19', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('38', '29858589', 'DÍAZ UZCATEGUI, EDISON JESÚS', '2003-01-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('39', '29858970', 'JIMENEZ PEÑA, KELVIN JOSSUE', '2003-06-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('40', '29940695', 'RODRÍGUEZ HERNÁNDEZ,  MEDIXON DANIEL JESUS', '2003-08-12', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('41', '29940779', 'BRICEÑO TOVAR, MICHELL JOSÉ', '2003-06-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('42', '30039024', 'RIBAS MORGADO, MILEIDYS PAOLA DEL VALLE', '2002-12-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('43', '30039045', 'CARAPAICA CEDEÑO CIRO MIGUEL', '2003-06-19', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:23', '2017-03-11 14:20:23');
+INSERT INTO `students` VALUES ('44', '30039229', 'SALAZAR DI GABRIELE ANGELA VANESSA', '2003-09-17', 'VALENCIA', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('45', '30039546', 'RIVAS CORDOVA JENIFER KARLIE', '2003-10-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('46', '30039963', 'HIDALGO TORRES MARÍA JOSÉ', '2003-03-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('47', '30039983', 'HERNÁNDEZ VILLARROEL, JARED YOEL', '2003-10-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('48', '30160410', 'HERNÁNDEZ RAMIREZ DANIELA NAZARETH', '2003-09-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('49', '30160603', 'ACOSTA MEJÍA, KARIANNY JOSÉ', '2003-08-09', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('50', '30160658', 'SILVA MATUTE, DOUGLAS RAFAEL', '2003-11-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('51', '30160660', 'AREVALO NUÑEZ, JOSE ALBERTO', '2003-07-29', 'SAN JUAN DE LOSMORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('52', '30160777', 'CASTRO MOLINA, ENMANUEL JOHAN', '2003-11-25', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('53', '30275901', 'VALENZUELA SÁNCHEZ KEIVER DANIEL', '2003-04-16', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('54', '30276105', 'QUERO MIJARES, JUAN ANGEL   ', '2003-10-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('55', '30276441', 'VARGAS ALVIA , JOSÉ DANIEL', '2003-12-08', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('56', '30276722', 'BORGES RUÍZ MIRIALIS ZULIMAR', '2003-08-02', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('57', '30276755', 'ARTEAGA AVILAN YARIUSKI ANABEL', '2003-12-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:24', '2017-03-11 14:20:24');
+INSERT INTO `students` VALUES ('58', '30463839', 'MARTÍNEZ ZERPA JOSE ANGEL', '2003-06-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('59', '30627046', 'PAEZ  DIAZ,  YUBETZI  EDUANNYS', '2002-10-23', 'SAN FERNANDO DE APURE', 'F', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('60', '30790321', 'PRADA HERNÁNDEZ, MIGUELLETH JOSÉ', '2003-03-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('61', '30874265', 'MENA GARCÍA LUÍS DAVID', '2004-01-21', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('62', '30961333', 'MEDINA SANTIAGO MOISES DAVID ABRAHAM', '2003-10-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('63', '31294429', 'MILANO  SÁNCHEZ, YOSMERY YOLIMAR', '2003-12-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('64', '31321554', 'MORALES ALVAREZ, JEREMIAS DANIEL', '2003-11-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('65', '31346061', 'BORREGO JIMÉNEZ, JEIVER EDUARDO', '2003-09-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 14:20:25', '2017-03-11 14:20:25');
+INSERT INTO `students` VALUES ('66', '30276578', 'HERNANDEZ PAEZ FRANCISCO JAVIER', '2004-04-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('67', '30276778', 'BORGES MEZONES ROSMARY DARIANA', '2004-02-06', 'VALENCIA', 'F', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('68', '30276851', 'BANDEZ BLANCO ALEJANDRO ANTONIO', '2004-01-26', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('69', '30325816', 'ZACARIAS PADRON RITHZEL LISSETTE', '2004-04-02', 'CARACAS', 'F', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('70', '30326053', 'GARCIA MARTINEZ MARK EOWYN', '2004-04-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('71', '30626271', 'VELASQUEZ ROMAN LUIS EDUARDO', '2004-11-06', 'SAN FERNANDO DE APURE', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('72', '30626315', 'ALONZO TORREALBA JACOB ENMANUEL', '2004-10-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('73', '30626505', 'LEDEZMA MILANO RONIER ANTONIO', '2004-08-20', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('74', '30626648', 'CONTRERAS MORA MORY MARIA', '2004-05-08', 'CALABOZO', 'F', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('75', '30648237', 'DIAZ PADRON GENISET PAOLA', '2004-11-19', 'EL CALLAO', 'F', '2017-03-11 17:09:21', '2017-03-11 17:09:21');
+INSERT INTO `students` VALUES ('76', '30703057', 'COELLO MARTINEZ HECTOR JOSE', '2004-11-10', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('77', '30703202', 'BARRIOS CARVAJAL ESTEBANY AYANZULY', '2004-08-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('78', '30703459', 'BENGOCHEA PULIDO ANTHONY MIGUEL', '2004-09-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('79', '30703537', 'NAVAS MORGADO EDUARDO JOSE ', '2004-04-30', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('80', '30703907', 'ACEVEDO CORREA ELIEZER MOISES', '2004-11-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('81', '30789667', 'PONCE NOGUERA INDRIANNIS INMARU', '2004-09-13', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('82', '30873723', 'NUÑEZ REYNA SIMONEY DEL CARMEN', '2003-12-02', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('83', '30873738', 'ZAMBRANO RODRIGUEZ JESUS ABRAHAM', '2004-05-25', 'MARACAIBO', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('84', '30874017', 'MEJIAS SEIJAS LEONARDO JOSE', '2004-11-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('85', '30880952', 'LINAREZ GRATEROL CLEIDYSMAR VALENTINA', '2004-08-24', 'NIRGUA-YARACUY', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('86', '30961450', 'JASPE MERCADO DANIUSKA DISNAILY', '2004-02-13', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('87', '30962031', 'DIAZ JARAMILLO KERLIN RACHELL', '2004-11-22', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:22', '2017-03-11 17:09:22');
+INSERT INTO `students` VALUES ('88', '31031402', 'PEÑA ROJAS RUBREXY NARYELIMAR', '2004-11-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('89', '31107354', 'MARTINEZ BARRADES JESUS ABAT ', '2004-03-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('90', '31107527', 'REQUENA HERRADES OMALIER RENIFEL', '2004-10-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('91', '31141905', 'MEZA MEDINA MARIANA DEL CARMEN', '2004-02-03', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('92', '31142057', 'CENTENO ZERPA ESTEFANIA', '2004-08-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('93', '31261607', 'PEREZ LEAL BRIYERLIN AMADA', '2003-10-01', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('94', '31261675', 'GARCIA VELASQUEZ MARGARET MAIRE', '2004-07-04', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('95', '31321506', 'ABREU ACOSTA DANYELIS NAZARETH', '2004-04-02', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('96', '31415383', 'RONDON CARDONA NIXON WLADIMIR', '1900-01-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('97', '31461012', 'CORDERO ESPINOZA CRISTIAN DANIEL', '2004-02-17', 'MARACAY-ARAGUA', 'M', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('98', '31711784', 'VILLAFRANCA OVALLES MARIA FERNANDA', '2004-11-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('99', '31878378', 'VARGAS GONZALEZ LEONARDO ENRIQUE', '2004-03-24', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('100', '10418616721', 'AMUNDARAI CONTRERAS URIANGEL TIBISAY', '2004-04-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:23', '2017-03-11 17:09:23');
+INSERT INTO `students` VALUES ('101', '29858033', 'CHACÓN PÉREZ, SAMUEL JOSÉ', '2003-06-11', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('102', '29858681', 'SANTIAGO TABLANTE, JACKSÓN JOSÉ', '2003-05-20', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('103', '29858778', 'HERNÁNDEZ FLORES JESÚS DANIEL', '2003-02-14', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('104', '29940760', 'CEBALLOS GUARENAS, FRANNIER JOSÉ', '2003-04-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('105', '29940943', 'ACEVEDO CORREA MARIA JOSÈ', '2003-01-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('106', '29941301', 'GARCÍA REQUENA YUSBEYKER ADRIANA', '2003-02-03', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('107', '30039033', 'GUZMÁN INOJOSA JORGE LUÍS ', '2003-03-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('108', '30039374', 'TORTOSA ARREAZA GABRIEL ALEJANDRO', '2003-07-24', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('109', '30039459', 'BANDRES GRATEROL JHEANNYMAR ELIZABETH', '2003-05-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('110', '30039487', 'BELISARIO HILARDO, ARIANNA DEL CARMEN', '2003-05-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('111', '30039549', 'PINTO SUÁREZ JEFERSON DE JESÚS ', '2003-03-08', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('112', '30160406', 'ALVIA MANZANILLA, ENYERBER JOHAN', '2003-08-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('113', '30160414', 'VÁSQUEZ MANZANO JESÚS ARMANDO', '2002-10-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:46', '2017-03-11 17:09:46');
+INSERT INTO `students` VALUES ('114', '30160415', 'VÁSQUEZ MANZANO JENIFER VICTORIA', '2003-12-11', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('115', '30160661', 'CRESPO BOYER, YOXEANNYS ANDREÍNA', '2003-11-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('116', '30276041', 'TERÁN JIMENES, AURYMAR EUGENIA', '2003-07-12', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('117', '30276088', 'DÍAZ BRICEÑO, JHOMBEIKER ANTONIO', '2003-10-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('118', '30276330', 'MONTOYA SALDEÑO FÉLIX ANDRES', '2003-03-01', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('119', '30276423', 'PADILLA GUARIQUE, CESAR JOSE', '2003-10-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('120', '30276698', 'LONGAS VELASQUEZ MANUEL ALEJANDRO', '2003-12-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('121', '30276777', 'DÍAZ MARTÌNEZ, GABRIELA ESTEFANIA', '2003-07-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('122', '30463321', 'VELÁSQUEZ PÉREZ ESCARLET DESIREE', '2003-11-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('123', '30463353', 'ORTEGA OROPEZA GREG ALEXANDER', '2003-08-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('124', '30463470', 'GARCÍA MACHUCA HÉCTOR DANIEL ', '2003-05-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('125', '30521293', 'HERNANDEZ FERRER DIEGO ALEJANDRO', '2003-02-28', 'CARACAS', 'M', '2017-03-11 17:09:47', '2017-03-11 17:09:47');
+INSERT INTO `students` VALUES ('126', '30626844', 'OLIVO ARRAIZ, JONATHAN ADRIAN', '2003-05-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('127', '30703806', 'SUÁREZ BUSTAMANTE, VALERIA CAROLINA', '2003-11-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('128', '30790372', 'MIQUELENA CASTILLO MARÍA DANIELA', '2003-09-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('129', '30933066', 'SALAZAR GUARISMA LUIRVIS DANIEL', '2003-10-01', 'CANTAURO', 'M', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('130', '31227213', 'SUÁREZ GARCÍA, KIMBERLY PAOLA', '2003-12-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('131', '31261882', 'TORREALBA GONZALEZ, JOSE ANTONIO', '2003-11-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('132', '31321579', 'LANDAETA NAVAS DORIANNY YOSELIN', '2004-01-03', 'SOMBRERO', 'F', '2017-03-11 17:09:48', '2017-03-11 17:09:48');
+INSERT INTO `students` VALUES ('133', '28262672', 'ARIAS FEMAYOR  JOSE ENRIQUE', '2002-02-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:16', '2017-03-11 17:10:16');
+INSERT INTO `students` VALUES ('134', '28408816', 'PIÑERO HERNANDEZ JAVIER JOSE', '2002-06-19', 'CARACAS', 'M', '2017-03-11 17:10:16', '2017-03-11 17:10:16');
+INSERT INTO `students` VALUES ('135', '28482164', 'MARTINEZ ACOSTA JOSE RAMON', '2002-03-13', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('136', '28482374', 'MARCANO TOVAR FRANYELIS DESIREE', '2002-03-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('137', '28482685', 'JASPE MERCADO DANIXSON RENE', '2002-08-26', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('138', '28482774', 'FLORES FLORES EDWIN EDUARDO', '2002-04-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('139', '29576378', 'HERNANDEZ SANCHEZ JOEL JOSE', '2002-07-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('140', '29576544', 'GOMEZ ZACARIAS REBECA LORENA', '2002-09-29', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('141', '29576760', 'ARREAZA BARRIOS JUAN CARLOS', '2002-07-11', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('142', '29576968', 'DE FARIAS VASQUEZ ESTEFANI DANIELA', '2002-03-27', 'CARABOBO', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('143', '29588743', 'VILLEGAS NELO LUSIA ELIZABEX', '2002-10-15', 'SAN FELIPE ', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('144', '29671315', 'PEREZ DIAZ MOISES DE JESUS', '2002-09-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('145', '29671574', 'ARREAZA GONZALEZ OREANNY  CARIDAD', '2002-01-30', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('146', '29671853', 'CUENCA ABACHE ROSANGEL  SABRINA', '2002-09-23', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('147', '29671855', 'RODRIGUEZ RIVAS CARLOS JAVIER', '2002-05-24', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('148', '29781049', 'PEREZ MENDEZ MEZLY MARGARITA', '2002-11-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:17', '2017-03-11 17:10:17');
+INSERT INTO `students` VALUES ('149', '29781100', 'MILANO SANCHEZ KATHERINE YOLIMAR', '2001-11-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('150', '29781460', 'LEMUS CALDERA FIDEL EDUARDO', '2002-12-14', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('151', '29781767', 'BARRIOS GALINDO YANNELLY  ANDREA', '2002-08-09', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('152', '29816313', 'FLORES ACASME JUAN VICENTE ', '2002-09-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('153', '29858086', 'PEREIRA SALCEDO YENIFER CAROLINA', '2002-12-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('154', '29858300', 'CASTRO SUBERO KEILYN MARIU', '2002-10-22', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('155', '29858475', 'RATTIA LARA BRYAN GABRIEL', '2003-03-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('156', '29858632', 'CONTRERAS ORELLANA JACBELYS DONAYDI  FROIMAR', '2002-11-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('157', '29858697', 'PEREZ CASTILLO WILMEIBER ARGENICA', '2002-02-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:18', '2017-03-11 17:10:18');
+INSERT INTO `students` VALUES ('158', '29858872', 'HERNANDEZ HIDALGO NEIBRIS PAOLA', '2002-11-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('159', '29940592', 'MOLINA SEIJAS MARIA ALEJANDRA', '2002-08-06', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('160', '29941284', 'FAJARDO GONZALEZ JOSUE LEONARDO', '2002-11-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('161', '29941308', 'MENDOZA CONTRERAS BARBARA YXSHEL', '2002-07-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('162', '29941431', 'FUENTES RAMIREZ JOSE DANIEL', '2001-12-28', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('163', '30039447', 'PARRA ALVAREZ EVER DANIEL', '2002-12-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('164', '30039684', 'VASQUEZ  MEJIAS   MARIA ALEXANDRA', '2002-08-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('165', '30039685', 'VASQUEZ  MEJIAS   MARIA ALEJANDRA', '2002-08-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('166', '30039729', 'COLMENAREZ REYES WILMER JOSE', '2002-09-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('167', '30463501', 'MONTAÑEZ GONZALEZ YEFERSON DANIEL', '2002-01-10', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('168', '30789654', 'ACEVEDO LUNA ANGEL RAFAEL', '2002-04-08', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:19', '2017-03-11 17:10:19');
+INSERT INTO `students` VALUES ('169', '27238362', 'ROMERO MENA ANDRES JOSE', '2000-04-24', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:34', '2017-03-11 17:10:34');
+INSERT INTO `students` VALUES ('170', '27695787', 'TOVAR ZABALETA JOSE MANUEL', '2000-03-03', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('171', '28408006', 'RODRIGUEZ RODRIGUEZ YURELYS NERIMAR', '2002-04-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('172', '28408459', 'RODRIGUEZ RODRIGUEZ MIGUEL EDUARDO', '2002-05-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('173', '28408583', 'CAMEJO GRATEROL ALBANY DINALBA', '2002-01-26', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('174', '28408850', 'SOJO PINEDA NANCY NAZARETH', '2002-06-23', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('175', '28482290', 'ALVARADO LARES VICTORIA CAROLINA', '2002-01-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('176', '28482986', 'DIAZ SATURNO LEONARDO RAFAEL', '2002-09-21', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('177', '29576031', 'POLEO VIELMA BRYAN ALEJANDRO', '2002-07-28', 'CALABOZO', 'M', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('178', '29576385', 'NIEVES ORTIZ ENDIMAR DEL VALLE', '2002-09-10', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('179', '29576657', 'LEZAMA LAYA INDRA GABRIELA', '2002-10-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:35', '2017-03-11 17:10:35');
+INSERT INTO `students` VALUES ('180', '29576922', 'GONZALEZ PERAZA LAURYBEL DEL VALLE', '2002-08-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('181', '29671036', 'VALE HERNANDEZ FABIANA ROSA', '2002-09-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('182', '29781014', 'BELLO FARIAS JEIQUELINE JOSIMAR', '2002-03-01', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('183', '29781232', 'MOSQUEDA CARAPAICA YORGELIS ELISABETH', '2002-06-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('184', '29781234', 'MOSQUEDA CARAPAICA YORGELIS ESTEFANI', '2002-06-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('185', '29781569', 'ZAMORA PERALTA NEHOMAR DAVID ', '2002-04-12', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('186', '29781576', 'PEREZ MEZONE ALEJANDRO JOSE ', '2002-08-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('187', '29781754', 'NUÑEZ MORENO MAURICIO JESUS', '2002-11-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('188', '29858044', 'GOMEZ SANCHEZ MOISES ENMANUEL', '2002-04-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('189', '29858649', 'RATTIA SILVA MANUEL LONARDO', '2002-09-30', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:36', '2017-03-11 17:10:36');
+INSERT INTO `students` VALUES ('190', '29858985', 'OSORIO MORGADO JOSE HABRAAN ', '2002-12-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('191', '29858987', 'IZQUIEL GIL JORGE ENRIQUE', '2002-12-07', 'CALABOZO', 'M', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('192', '29940554', 'VELAZQUEZ SOJO AMADELEYNS DE LA TRINIDAD', '2002-10-31', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('193', '29940685', 'MORALES DIAZ KARIANNY STEPHANIA', '2003-02-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('194', '29941289', 'SUBERO URBINA MARIANNY YUSE', '2002-09-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('195', '30039531', 'SUAREZ BUSTAMANTE VICTORIA COROMOTO', '2002-05-23', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('196', '30039734', 'ALGUEIRA MORA WILLIAM MIGUEL', '2002-10-12', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('197', '30039741', 'TOVAR ZABALETA MIGUELANGEL', '2002-10-31', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('198', '30160650', 'ALVIA GONZALEZ YUSELIS NAZARETH', '2002-04-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:37', '2017-03-11 17:10:37');
+INSERT INTO `students` VALUES ('199', '30276737', 'VASQUEZ GARCIA NEMESIS ELISANDRA', '2002-12-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `students` VALUES ('200', '30325427', 'TOVAR CONDE KARLA SUSANA', '2002-09-29', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `students` VALUES ('201', '30626841', 'CORTEZ CARPIO LEANDRO EZEQUIEL', '2002-01-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `students` VALUES ('202', '30789699', 'AREVALO MAESTRE ROLIENNY DANIELA', '2002-07-01', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `students` VALUES ('203', '30790384', 'SARABIA BRAVO DIEGO EFRAIN', '2002-01-18', 'MARACAY', 'M', '2017-03-11 17:10:38', '2017-03-11 17:10:38');
+INSERT INTO `students` VALUES ('204', '27468776', 'DÍAZ PÉREZ, GREILIS URIMARE', '2001-01-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('205', '27176899', 'PEREZ HIDALGO JOSEMAR BARBARA', '2001-07-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('206', '27631101', 'SUBERO URBINA, EURIMAR DEL VALLE', '2001-01-06', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('207', '27665373', 'GALÍNDEZ BERLIOZ, JUAN E. J.', '2001-01-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('208', '27665862', 'MANZO QUINTERO, YOSBER G', '2001-03-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('209', '27665881', 'ZAMBRANO RAMIREZ, LEONARDO A.', '2001-05-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('210', '28012121', 'RIOS BLANCO, DIANELLY DEL C. V.', '2001-06-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('211', '28012305', 'FERRER OLIVO, RICARDO JOSÉ', '2001-07-12', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:04', '2017-03-11 17:11:04');
+INSERT INTO `students` VALUES ('212', '28012402', 'ALGUEIRA RODULFO, CARLOS E.', '2001-05-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('213', '28012461', 'HERNANDEZ PALACIOS, FABIANA ZULIMAR', '2001-03-14', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('214', '28012510', 'FLORES CEDEÑO, WATHZULY MARIA', '2001-04-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('215', '28012873', 'PADILLA MANCERA, ANA YSABEL DE', '2001-03-05', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('216', '28176130', 'APODACA SÁNCHEZ, CARLOS RAFAEL', '2000-06-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('217', '28176354', 'HERNANDEZ ZERPA, ADRIANNY DARIU', '2001-03-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('218', '28262723', 'MORALES ÁLVAREZ, SINAY CAROLINA', '2001-09-10', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('219', '28262756', 'AREVALO NUÑEZ, ROYMAR AIDA', '2001-02-04', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('220', '28262974', 'BOLIVAR MARTINEZ, CESAR A.', '2001-12-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('221', '28408005', 'GUTIERREZ SUAREZ, ROYNES N.', '2001-07-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('222', '28408411', 'CAMERO ESPINOZA, HENDRY RAFAEL', '2001-12-19', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('223', '28408704', 'GARCIA REQUENA, JENNIFER A.', '2001-01-20', 'VILLA DE CURA', 'F', '2017-03-11 17:11:05', '2017-03-11 17:11:05');
+INSERT INTO `students` VALUES ('224', '28408797', 'MORALES MALDONADO, BÁRBARA NAHERMIS', '2001-06-04', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('225', '28408887', 'DONAIRE REQUENA, OLIMAR NAZARETH', '2001-02-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('226', '28482138', 'VARGAS BREA, LUIS ANGEL', '2001-04-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('227', '28482690', 'CISNEROS MERCADO, ROSMER D.', '2001-06-26', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('228', '28482715', 'TORRES BRITO, EFREN ANTONIO', '2001-12-01', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('229', '28482741', 'BELISARIO SANDOVAL, ERICK DANIEL', '2001-01-25', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('230', '28482781', 'RODRIGUEZ CARRUIDO, JIMARY CAROLINA', '2001-10-12', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('231', '29576513', 'GARCIA LAYA, DAVID JOSE', '2001-01-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('232', '29671576', 'ORTIZ PÁEZ, MOISES ENRIQUE', '2001-11-26', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('233', '29671856', 'MOTA RAMIREZ, OLYEMIR ALEJANDRA', '2001-08-31', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('234', '29781415', 'GONZALEZ REQUENA, EBERLIANY COROMOTO', '2001-11-06', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:06', '2017-03-11 17:11:06');
+INSERT INTO `students` VALUES ('235', '27665278', 'GONZALEZ RAMIREZ, ROBERT EDUARDO', '2001-02-11', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `students` VALUES ('236', '27695817', 'YOVERA ROJAS MOISES DAVID', '2001-07-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `students` VALUES ('237', '28012665', 'VARGAS CEBALLOS MOISES', '2001-03-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `students` VALUES ('238', '28012003', 'CASTILLO ERAZO TOMAS EMILIO                         ', '2000-07-11', 'MERIDA', 'M', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `students` VALUES ('239', '28176437', 'APONTE HERNANDEZ JOSE ERNESTTO', '2001-12-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:28', '2017-03-11 17:11:28');
+INSERT INTO `students` VALUES ('240', '28176442', 'GONZALEZ TOVAR, ELISA ALEXANDRA', '2001-12-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('241', '28176509', 'CEDEÑO PEREZ MARISABEL', '2001-12-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('242', '28262820', 'GALINDO TORREALBA, DAMELLYS NAKARIT', '2001-03-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('243', '28408178', 'LEDON VEGA JANNEYS DEL CARMEN', '2001-03-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('244', '28408195', 'SCOTT SOJO LISFROIMAR DE LA CHIQUINQUIRA', '2001-08-03', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('245', '28408536', 'GASSETTE REQUENA CORIANNY NAZARETH', '2001-10-11', NULL, 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('246', '28408680', 'OSORIO HERNANDEZ ROXANNA NAZARETH', '2001-08-02', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('247', '28408737', 'RAMIREZ ARZOLA DAYANELIS HELZEN ABRIL', '2001-05-31', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('248', '28408776', 'MEZA PAZ, STARLIN NAZARETH', '2001-09-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:29', '2017-03-11 17:11:29');
+INSERT INTO `students` VALUES ('249', '28408804', 'TERAN HERNANDEZ JOSE ALBERTO', '2001-11-20', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('250', '28482179', 'ARIAS SANTELIZ, JULIANCYS SARAY', '2001-12-26', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('251', '28482208', 'RONDON MEDINA, DANIELA ESTEFANIA', '2001-09-12', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('252', '28482545', 'TERAN ROJAS ANTONELLA KARLIANNY', '2001-11-14', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('253', '28482602', 'GARCIA MONTESINO SAUL JOSE GREGORIO', '2001-11-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('254', '28482736', 'PANTOJA DORTA WILLIANNY BRIMAR', '2001-05-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('255', '28482899', 'HURTADO ALTUVE, SINAMAYKA DEL CARMEN', '2001-09-04', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('256', '29527070', 'LARA TANDIOY, AILEEN GABRIELA', '2001-05-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('257', '29671126', 'RAMIREZ FIGUEREDO VICTORIA VALENTINA', '2001-05-02', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:30', '2017-03-11 17:11:30');
+INSERT INTO `students` VALUES ('258', '29671277', 'SILVA FUNES, NAYLESKA JOSÉ', '2001-11-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('259', '29671597', 'RAMOS ROSALEZ, FRANNIMAR DE LOS ANGELES', '2002-01-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('260', '29781173', 'MARTINEZ SOTILLO LOISMARA ESTERVINA', '2001-10-22', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('261', '29781243', 'JIMÉNEZ LUGO, ORLANDO JOHAN', '2001-03-16', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('262', '29781689', 'GARCÍA SÁNCHEZ, ENDER GABRIEL', '2001-02-03', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('263', '29858500', 'DIAZ CARBALLO JOGSELIN KARIUSKA', '2001-09-21', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('264', '29858711', 'RAMIREZ RODRIGUEZ ANGELICA GEHOVANNINA', '2001-10-06', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('265', '29941388', 'CHIRA MADERO JUSNEIBY NAZARETH', '2001-09-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('266', '30039247', 'QUINTANA ROJAS JOSE ANTONIO', '2000-05-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:31', '2017-03-11 17:11:31');
+INSERT INTO `students` VALUES ('267', '30160493', 'ARIAS GARCIA RAILER DANIEL', '2002-01-08', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `students` VALUES ('268', '31878054', 'NOGUERA MALDONADO, YEREMI DARIANA', '2000-04-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:32', '2017-03-11 17:11:32');
+INSERT INTO `students` VALUES ('269', '26973488', 'PONCE NOGUERA,  JOSÉ ANTONIO', '2000-03-09', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `students` VALUES ('270', '26973720', 'GRELA SANTAELLA,  ANYELA VANESSA', '2000-04-25', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `students` VALUES ('271', '26973832', 'FLORES PÉREZ,  YARISMAR SINAI', '2000-02-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `students` VALUES ('272', '27138903', 'APONTE VILLAMIZAR,  GLENDIS CAROLINA', '1999-02-02', 'CARACAS', 'F', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `students` VALUES ('273', '27238071', 'AMARO AMARO,  GABRIELA CARIDAD', '2000-04-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:55', '2017-03-11 17:11:55');
+INSERT INTO `students` VALUES ('274', '27238602', 'APARICIO OCHOA,  JESÚS EDUARDO', '2000-04-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('275', '27238633', 'PÉREZ INFANTE,  MARÍA DEL CARMEN', '2000-05-08', 'CALABOZO', 'F', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('276', '27238635', 'REAZA TORREALBA,  CARLOS EDUARDO', '2000-01-21', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('277', '27468748', 'BREA CASTILLO,  PEDRO ALEJANDRO', '2000-12-31', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('278', '27526198', 'JARDIN PINTO, MAURICIO ADRIÁN', '2000-01-19', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('279', '27631059', 'ORTEGA CARMONA,  OSCAR DANIEL', '2000-06-23', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('280', '27631102', 'CASTRO SUBERO,  KEVIN JESÚS', '2001-01-05', 'CARUPANO EDO. SUCRE', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('281', '27631217', 'LINARES DÍAZ,  YINESKA COROMOTO', '2001-01-18', 'VILLA DE CURA', 'F', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('282', '27631222', 'ACOSTA BLANDON,  MARÍA VICTORIA', '2000-05-15', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('283', '27631296', 'ALEGRÍA JASPE,  DAVID JOSÉ', '2000-04-27', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('284', '27631331', 'AGUILAR LEGON,  ROSÁNGEL ANDEA', '2000-09-09', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:56', '2017-03-11 17:11:56');
+INSERT INTO `students` VALUES ('285', '27665124', 'CAMEJO RAMÍREZ,  CLEYDIMAR DIANNE', '2000-10-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('286', '27665190', 'LEZAMA LAYA,  MARÍA GABRIELA', '2000-07-16', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('287', '27665282', 'AZACÓN LARA,  ESCARLIN ILIANA', '2000-11-30', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('288', '27665395', 'PÉREZ LARA,  SERGIO ANDRÉS', '2000-02-09', ' SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('289', '27665773', 'ESCALONA SANCHEZ, YURUANA NAZARETH', '2000-11-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('290', '27665823', 'RODRÍGUEZ ALVIA,  EDINSON MISAEL', '2001-01-07', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('291', '28012037', 'ZAMBRANO FERNÁNDEZ,  GERÓNIMO ALEJANDRO', '2000-12-03', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('292', '28012347', 'CRUCES BRIZUELA ,  KEYLLA DE JESÚS', '2000-08-29', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('293', '28012376', 'HERNÁNDEZ PAREDES, RUDY NAZARETH', '1999-12-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:57', '2017-03-11 17:11:57');
+INSERT INTO `students` VALUES ('294', '28012889', 'MORALES NIEVES, FLOREDDY MARGARITA', '2000-11-22', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('295', '28012902', 'MARTÍNEZ QUINTERO,  JUANA EDUVIGIS', '2000-11-07', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('296', '28175100', 'MACHO BERTI,  ROSSMARY DEL CARMEN', '2000-06-08', ' CARACAS', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('297', '28176171', 'TORREYES MARTÍNEZ,  SAILEK ANDREINA', '2000-02-17', ' SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('298', '28408106', 'GARCÍA LANDAETA,  CARLOS JESÚS', '2000-07-25', ' SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('299', '28408655', 'DÍAZ LEZAMA,  ANDRÉS ALBERTO', '2000-07-28', ' SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('300', '28482425', 'NAVAS CAMPOS,  VÍCTOR ANDRÉS', '2000-08-17', 'CALABOZO', 'M', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('301', '29576064', 'UZCÁTEGUI DELGADO,  GERALDINE IVANOVA', '2001-09-04', ' SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('302', '29576748', 'MORA BRITO,  GABRIEL JACOBO', '2000-04-13', ' VALLE DE LA PASCUA', 'M', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('303', '29781403', 'YDALGO FERNANDEZ, YAIRUBY ROSAGEL', '2000-10-11', 'SAN CASIMIRO', 'F', '2017-03-11 17:11:58', '2017-03-11 17:11:58');
+INSERT INTO `students` VALUES ('304', '26848575', 'DE FREITAS BANDRES,  CARLA ALIAMER', '2000-01-05', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('305', '26848606', 'GONZÁLEZ HERNÁNDEZ,  AUDREY DEL VALLE', '1999-12-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('306', '27238111', 'MARTÍNEZ OLIVEROS,  MIGUEL ALEXANDER JOSÉ', '2000-03-19', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('307', '27238131', 'PÉREZ HERNÁNDEZ, JESÚS ENRIQUE', '2000-05-08', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('308', '27238559', 'INFANTE SANTIAGO, ALEXIS GABRIEL', '2000-01-03', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('309', '27238621', 'PINEDA PINEDA,  JAVIER JOSÉ', '2000-04-04', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('310', '27406966', 'GENNARO CASTILLO, ANGIMAR DANIELA', '2000-09-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:14', '2017-03-11 17:12:14');
+INSERT INTO `students` VALUES ('311', '27468745', 'RINCÓN HERNÁNDEZ, HELI GABRIEL', '2000-08-25', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('312', '27468787', 'CORTÉZ CARPIO,  LEONARDO EMISAEL', '2000-05-15', 'VILLA DE CURA', 'M', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('313', '27631000', 'DÍAZ RANGEL,  ENDYRMAR NAHOLY', '2000-05-19', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('314', '27631069', 'PADRINO SUÁREZ, YULJEISY KEILLIMAR', '2000-11-20', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('315', '27631203', 'MACHADO HENRÍQUEZ, MARÍA DEL CARMEN', '2000-03-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('316', '27631426', 'BRAVO TORRES,  FRANCISMAR  ISABELLA', '2001-04-24', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('317', '27665188', 'ÁLVAREZ CASTRO,  KARIOSQUI DEL CARMEN', '2000-02-10', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('318', '27665428', 'LEAL RIBAS, JOSÉ DANIEL', '2000-06-29', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('319', '27665560', 'DI BERARDINO DÍAZ, ORLANDO RAFAEL', '1999-06-02', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('320', '27665678', 'PÉREZ MEZONES, MARÍA JOSÉ', '2000-11-03', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('321', '27665946', 'LÓPEZ INFANTE,  SOROCAIMA JOSÉ', '2000-09-05', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('322', '27665975', 'MENDOZA RIVAS, ANLUIMAR NAZARETH', '2000-10-17', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:15', '2017-03-11 17:12:15');
+INSERT INTO `students` VALUES ('323', '27695781', 'ALVAREZ CELIS, AURIMAR DEL CARMEN', '2000-12-27', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('324', '27695840', 'ZABALETA RENGIFO, NAYERLIN', '2000-04-06', 'VILLA DE LA PASCUA', 'F', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('325', '27695857', 'GARCÍA GONZÁLEZ,  MAYIRA DEYARY', '2000-08-12', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('326', '27695868', 'VARGAS MÉNDEZ,  MARCOS ANTONIO', '2000-11-17', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('327', '28012070', 'MONTEZUMA GASCÓN,  NAIROBY DEL CARMEN', '2000-08-05', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('328', '28012263', 'QUINTANA HURTADO,  LUIS FERNANDO', '2000-10-06', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('329', '28012369', 'HERNÁNDEZ SÁNCHEZ,  WILKER JOSÉ', '2000-09-21', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('330', '28012493', 'DELGADO ROMÁN,  JESÚS RAMÓN', '2000-09-18', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('331', '28012550', 'GUZMÁN IZQUIEL,  KARLIMAR DEL VALLE', '2000-09-28', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:16', '2017-03-11 17:12:16');
+INSERT INTO `students` VALUES ('332', '28012650', 'BARRIOS RAMOS EDUARDO EMILIO DE JESÚS', '2000-11-24', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('333', '28012999', 'HERRERA SILVA,  LEANNIS CARIDAD', '2000-10-26', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('334', '28262678', 'PULIDO MOTA, MIRIAN ALEXANDRA', '2000-07-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('335', '28482787', 'SILVA MATUTE,  DUGLERYS AMARILYS', '2000-07-01', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('336', '29576729', 'BOLÍVAR PÉREZ,  FRANCHEZKA THAINA', '2000-10-08', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('337', '29671308', 'RONDON C., JOSE FRANCISCO', '1999-12-15', 'SAN JUAN DE LOS MORROS', 'M', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('338', '29781461', 'BELISARIO MARCANO,  PABELIM MILIANNIS', '2001-03-18', 'SAN JUAN DE LOS MORROS', 'F', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('339', '30039962', 'MANUITT CARAGUIMA,  ELIAM DAVID', '2000-08-05', 'CARACAS', 'M', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+INSERT INTO `students` VALUES ('340', '30160160', 'MARCANO RIOS,  ROBBINSON', '2000-09-29', 'VILLA DE CURA', 'M', '2017-03-11 17:12:17', '2017-03-11 17:12:17');
+
+  
+# | Vaciado de tabla 'tipo_ingresos'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'tipo_ingresos'
+# +------------------------------------->
+CREATE TABLE `tipo_ingresos` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'tipo_ingresos'
+# +------------------------------------->
+INSERT INTO `tipo_ingresos` VALUES ('1', 'Desayuno', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `tipo_ingresos` VALUES ('2', 'Almuerzo', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+  
+# | Vaciado de tabla 'user_role'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'user_role'
+# +------------------------------------->
+CREATE TABLE `user_role` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'user_role'
+# +------------------------------------->
+INSERT INTO `user_role` VALUES ('1', '1', '1');
+INSERT INTO `user_role` VALUES ('2', '1', '2');
+
+  
+# | Vaciado de tabla 'users'
+# +------------------------------------->
+# No especificado.
+ 
+ 
+# | Estructura de la tabla 'users'
+# +------------------------------------->
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
+  `role` enum('user','admin') COLLATE utf8_unicode_ci NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `login` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_login_unique` (`login`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ 
+ 
+# | Carga de datos de la tabla 'users'
+# +------------------------------------->
+INSERT INTO `users` VALUES ('1', 'Jorge', 'Morgado', 'admin', '1', 'admin', '$2y$10$hlDVLCQr4dXyTeRIVaylauGeR6cGatJ0cSg3h3wz.yNYqiYFGDNUa', 'Administrador del Sistema', 'F9VmZBNp6IleAiAorigU2iISuXskL6UxaKAHiBDTqI5mkniT8iIZqMJLmpVx', '2017-01-19 14:32:54', '2017-03-11 17:14:06', NULL);
+
+ 
